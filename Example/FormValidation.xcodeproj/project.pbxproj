@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45E304E8253BC85F2B16C2D2 /* libPods-FormValidationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */; };
+		547D6C2C1A1908A80052B750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2B1A1908A80052B750 /* main.m */; };
+		547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2E1A1908A80052B750 /* AppDelegate.m */; };
+		547D6C321A1908A80052B750 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C311A1908A80052B750 /* SignInViewController.m */; };
+		547D6C381A1908A80052B750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C361A1908A80052B750 /* Main.storyboard */; };
+		547D6C3A1A1908A80052B750 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C391A1908A80052B750 /* Images.xcassets */; };
+		547D6C3D1A1908A80052B750 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C3B1A1908A80052B750 /* LaunchScreen.xib */; };
+		547D6C671A192A850052B750 /* UserInterfaceFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C661A192A850052B750 /* UserInterfaceFormValidator.m */; };
+		547D6CBC1A196CF70052B750 /* SPXCompoundDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */; };
+		547D6CBD1A196CF70052B750 /* SPXCompoundDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */; };
+		547D6CBE1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */; };
+		547D6CBF1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */; };
+		547D6CC01A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */; };
+		547D6CC11A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */; };
+		547D6CC21A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */; };
+		547D6CC31A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */; };
+		547D6CC41A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB91A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m */; };
+		547D6CC51A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB91A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m */; };
+		547D6CC61A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */; };
+		547D6CC71A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */; };
+		547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		547D6C431A1908A80052B750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 547D6C1E1A1908A80052B750 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 547D6C251A1908A80052B750;
+			remoteInfo = FormValidation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33686C4C07B6D417606A5430 /* Pods-FormValidationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormValidationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		547D6C261A1908A80052B750 /* FormValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		547D6C2A1A1908A80052B750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547D6C2B1A1908A80052B750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		547D6C2D1A1908A80052B750 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		547D6C2E1A1908A80052B750 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		547D6C301A1908A80052B750 /* SignInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		547D6C311A1908A80052B750 /* SignInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		547D6C371A1908A80052B750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		547D6C391A1908A80052B750 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		547D6C3C1A1908A80052B750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		547D6C421A1908A80052B750 /* FormValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		547D6C471A1908A80052B750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547D6C651A192A850052B750 /* UserInterfaceFormValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInterfaceFormValidator.h; sourceTree = "<group>"; };
+		547D6C661A192A850052B750 /* UserInterfaceFormValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInterfaceFormValidator.m; sourceTree = "<group>"; };
+		547D6CAD1A196CF70052B750 /* SPXDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXDataValidator.h; sourceTree = "<group>"; };
+		547D6CAF1A196CF70052B750 /* SPXCompoundDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXCompoundDataValidator.h; sourceTree = "<group>"; };
+		547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidator.m; sourceTree = "<group>"; };
+		547D6CB11A196CF70052B750 /* SPXEmailDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXEmailDataValidator.h; sourceTree = "<group>"; };
+		547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmailDataValidator.m; sourceTree = "<group>"; };
+		547D6CB31A196CF70052B750 /* SPXEmptyDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXEmptyDataValidator.h; sourceTree = "<group>"; };
+		547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmptyDataValidator.m; sourceTree = "<group>"; };
+		547D6CB51A196CF70052B750 /* SPXPasswordDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXPasswordDataValidator.h; sourceTree = "<group>"; };
+		547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordDataValidator.m; sourceTree = "<group>"; };
+		547D6CB81A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SPXDataValidatorAdditions.h"; sourceTree = "<group>"; };
+		547D6CB91A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SPXDataValidatorAdditions.m"; sourceTree = "<group>"; };
+		547D6CBA1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+SPXDataValidatorAdditions.h"; sourceTree = "<group>"; };
+		547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+SPXDataValidatorAdditions.m"; sourceTree = "<group>"; };
+		547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmailDataValidatorSpec.m; sourceTree = "<group>"; };
+		7C98B65830CF3BF2289E151A /* Pods-FormValidationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormValidationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FormValidationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		547D6C231A1908A80052B750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547D6C3F1A1908A80052B750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45E304E8253BC85F2B16C2D2 /* libPods-FormValidationTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		260CB565A3DF07D87C218589 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33686C4C07B6D417606A5430 /* Pods-FormValidationTests.debug.xcconfig */,
+				7C98B65830CF3BF2289E151A /* Pods-FormValidationTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		547D6C1D1A1908A80052B750 = {
+			isa = PBXGroup;
+			children = (
+				547D6CAC1A196CF70052B750 /* SPXDataValidator */,
+				547D6C641A1925920052B750 /* User Interface */,
+				547D6C281A1908A80052B750 /* FormValidation */,
+				547D6C451A1908A80052B750 /* Tests */,
+				547D6C271A1908A80052B750 /* Products */,
+				260CB565A3DF07D87C218589 /* Pods */,
+				8710C4B05230FB2280F62BB4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		547D6C271A1908A80052B750 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C261A1908A80052B750 /* FormValidation.app */,
+				547D6C421A1908A80052B750 /* FormValidationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		547D6C281A1908A80052B750 /* FormValidation */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C2D1A1908A80052B750 /* AppDelegate.h */,
+				547D6C2E1A1908A80052B750 /* AppDelegate.m */,
+				547D6C391A1908A80052B750 /* Images.xcassets */,
+				547D6C3B1A1908A80052B750 /* LaunchScreen.xib */,
+				547D6C291A1908A80052B750 /* Supporting Files */,
+			);
+			path = FormValidation;
+			sourceTree = "<group>";
+		};
+		547D6C291A1908A80052B750 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C2A1A1908A80052B750 /* Info.plist */,
+				547D6C2B1A1908A80052B750 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		547D6C451A1908A80052B750 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C461A1908A80052B750 /* Supporting Files */,
+				547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */,
+			);
+			name = Tests;
+			path = FormValidationTests;
+			sourceTree = "<group>";
+		};
+		547D6C461A1908A80052B750 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C471A1908A80052B750 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		547D6C641A1925920052B750 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				547D6C361A1908A80052B750 /* Main.storyboard */,
+				547D6C301A1908A80052B750 /* SignInViewController.h */,
+				547D6C311A1908A80052B750 /* SignInViewController.m */,
+				547D6C651A192A850052B750 /* UserInterfaceFormValidator.h */,
+				547D6C661A192A850052B750 /* UserInterfaceFormValidator.m */,
+			);
+			name = "User Interface";
+			path = FormValidation;
+			sourceTree = "<group>";
+		};
+		547D6CAC1A196CF70052B750 /* SPXDataValidator */ = {
+			isa = PBXGroup;
+			children = (
+				547D6CAD1A196CF70052B750 /* SPXDataValidator.h */,
+				547D6CAE1A196CF70052B750 /* Validators */,
+				547D6CB71A196CF70052B750 /* Views */,
+			);
+			name = SPXDataValidator;
+			path = ../SPXDataValidator;
+			sourceTree = "<group>";
+		};
+		547D6CAE1A196CF70052B750 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				547D6CAF1A196CF70052B750 /* SPXCompoundDataValidator.h */,
+				547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */,
+				547D6CB11A196CF70052B750 /* SPXEmailDataValidator.h */,
+				547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */,
+				547D6CB31A196CF70052B750 /* SPXEmptyDataValidator.h */,
+				547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */,
+				547D6CB51A196CF70052B750 /* SPXPasswordDataValidator.h */,
+				547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		547D6CB71A196CF70052B750 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				547D6CB81A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.h */,
+				547D6CB91A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m */,
+				547D6CBA1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.h */,
+				547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8710C4B05230FB2280F62BB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		547D6C251A1908A80052B750 /* FormValidation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547D6C4C1A1908A80052B750 /* Build configuration list for PBXNativeTarget "FormValidation" */;
+			buildPhases = (
+				547D6C221A1908A80052B750 /* Sources */,
+				547D6C231A1908A80052B750 /* Frameworks */,
+				547D6C241A1908A80052B750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FormValidation;
+			productName = FormValidation;
+			productReference = 547D6C261A1908A80052B750 /* FormValidation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		547D6C411A1908A80052B750 /* FormValidationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547D6C4F1A1908A80052B750 /* Build configuration list for PBXNativeTarget "FormValidationTests" */;
+			buildPhases = (
+				E205C3346EF1E2E06B8275C7 /* Check Pods Manifest.lock */,
+				547D6C3E1A1908A80052B750 /* Sources */,
+				547D6C3F1A1908A80052B750 /* Frameworks */,
+				547D6C401A1908A80052B750 /* Resources */,
+				B919C49AC1A6E049C899458C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				547D6C441A1908A80052B750 /* PBXTargetDependency */,
+			);
+			name = FormValidationTests;
+			productName = FormValidationTests;
+			productReference = 547D6C421A1908A80052B750 /* FormValidationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		547D6C1E1A1908A80052B750 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Snippex;
+				TargetAttributes = {
+					547D6C251A1908A80052B750 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					547D6C411A1908A80052B750 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 547D6C251A1908A80052B750;
+					};
+				};
+			};
+			buildConfigurationList = 547D6C211A1908A80052B750 /* Build configuration list for PBXProject "FormValidation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 547D6C1D1A1908A80052B750;
+			productRefGroup = 547D6C271A1908A80052B750 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547D6C251A1908A80052B750 /* FormValidation */,
+				547D6C411A1908A80052B750 /* FormValidationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		547D6C241A1908A80052B750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547D6C381A1908A80052B750 /* Main.storyboard in Resources */,
+				547D6C3D1A1908A80052B750 /* LaunchScreen.xib in Resources */,
+				547D6C3A1A1908A80052B750 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547D6C401A1908A80052B750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B919C49AC1A6E049C899458C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E205C3346EF1E2E06B8275C7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		547D6C221A1908A80052B750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547D6CC61A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */,
+				547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */,
+				547D6CC41A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */,
+				547D6CC01A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */,
+				547D6CBE1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */,
+				547D6CC21A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */,
+				547D6C671A192A850052B750 /* UserInterfaceFormValidator.m in Sources */,
+				547D6C321A1908A80052B750 /* SignInViewController.m in Sources */,
+				547D6CBC1A196CF70052B750 /* SPXCompoundDataValidator.m in Sources */,
+				547D6C2C1A1908A80052B750 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547D6C3E1A1908A80052B750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547D6CC31A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */,
+				547D6CC11A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */,
+				547D6CBF1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */,
+				547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */,
+				547D6CC51A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */,
+				547D6CC71A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */,
+				547D6CBD1A196CF70052B750 /* SPXCompoundDataValidator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		547D6C441A1908A80052B750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 547D6C251A1908A80052B750 /* FormValidation */;
+			targetProxy = 547D6C431A1908A80052B750 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		547D6C361A1908A80052B750 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547D6C371A1908A80052B750 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		547D6C3B1A1908A80052B750 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547D6C3C1A1908A80052B750 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		547D6C4A1A1908A80052B750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		547D6C4B1A1908A80052B750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		547D6C4D1A1908A80052B750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FormValidation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		547D6C4E1A1908A80052B750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FormValidation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		547D6C501A1908A80052B750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33686C4C07B6D417606A5430 /* Pods-FormValidationTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FormValidationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FormValidation.app/FormValidation";
+			};
+			name = Debug;
+		};
+		547D6C511A1908A80052B750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C98B65830CF3BF2289E151A /* Pods-FormValidationTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FormValidationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FormValidation.app/FormValidation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		547D6C211A1908A80052B750 /* Build configuration list for PBXProject "FormValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547D6C4A1A1908A80052B750 /* Debug */,
+				547D6C4B1A1908A80052B750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547D6C4C1A1908A80052B750 /* Build configuration list for PBXNativeTarget "FormValidation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547D6C4D1A1908A80052B750 /* Debug */,
+				547D6C4E1A1908A80052B750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547D6C4F1A1908A80052B750 /* Build configuration list for PBXNativeTarget "FormValidationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547D6C501A1908A80052B750 /* Debug */,
+				547D6C511A1908A80052B750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 547D6C1E1A1908A80052B750 /* Project object */;
+}
