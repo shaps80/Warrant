@@ -7,9 +7,9 @@
 
 ## Usage
 
-Download the example project to see it in action, or checkout the presentation.
+Download the example project to see it in action, or checkout the **[presentation](https://github.com/shaps80/SPXDataValidators/blob/master/Data%20Validation%20-%20Presentation.pdf?raw=true)**.
 
-In its simplest for you can use a validator as such:
+In its simplest form you can use a validator as such:
 
 ``` objectivec
 
@@ -51,7 +51,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Shaps Mohsenin, shaps@theappbusiness.com
+Shaps, http://twitter.com/shaps
 
 ## License
 
