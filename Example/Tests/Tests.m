@@ -8,7 +8,10 @@
 
 SPEC_BEGIN(InitialTests)
 
-describe(@"Email Validator", ^{  
+describe(@"Email Validator", ^{
+  it(@"Should pass", ^{
+    [[theValue(2) should] equal:theValue(2)];
+  });
 });
 
 SPEC_END
