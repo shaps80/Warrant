@@ -2,3 +2,8 @@ language: objective-c
 xcode_workspace: Example/FormValidation.xcworkspace
 xcode_scheme: FormValidation
 xcode_sdk: iphonesimulator7.0
+
+before_install: 
+- brew update
+- brew unlink xctool
+- brew install xctool
