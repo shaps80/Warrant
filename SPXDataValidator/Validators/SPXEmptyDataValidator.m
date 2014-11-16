@@ -13,7 +13,7 @@
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
   if ([value respondsToSelector:@selector(length)]) {
-    return [value length];
+    return (BOOL)[value length];
   }
   
   return value;
