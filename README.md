@@ -7,9 +7,30 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Download the example project to see it in action, or checkout the presentation.
 
-## Requirements
+Basically though, your code might look something like this:
+
+``` objectivec
+
+- (void)configureValidators
+{
+  SPXEmptyDataValidator *emptyValidator = [SPXEmptyDataValidator new];
+  SPXEmailDataValidator *emailValidator = [SPXEmailDataValidator new];
+
+  NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];
+  SPXCompoundDataValidator *usernameValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+
+  [self.emailField applyValidator:usernameValidators];
+
+  SPXPasswordDataValidator *passValidator = [SPXPasswordDataValidator validatorWithRegularExpression:PasswordRegex];
+  validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, passValidator, nil];
+  SPXCompoundDataValidator *passwordValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+
+  [self.passwordField applyValidator:passwordValidators];
+}
+
+```
 
 ## Installation
 
