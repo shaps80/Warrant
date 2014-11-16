@@ -1,3 +1,4 @@
 language: objective-c
 xcode_workspace: Example/SPXDataValidators.xcworkspace
 xcode_scheme: SPXDataValidators
+xcode_sdk: iphonesimulator7.0
