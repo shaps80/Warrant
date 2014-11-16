@@ -1,11 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-target 'SPXDataValidators', :exclusive => true do
-  pod "SPXDataValidators", :path => "../"
-end
-
-target 'Tests', :exclusive => true do
-  pod "SPXDataValidators", :path => "../"
-
+target 'FormValidationTests', :exclusive => true do
   pod 'Kiwi'
 end

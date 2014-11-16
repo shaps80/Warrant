@@ -1,17 +1,10 @@
 PODS:
   - Kiwi (2.3.1)
-  - SPXDataValidators (0.1.0)
 
 DEPENDENCIES:
   - Kiwi
-  - SPXDataValidators (from `../`)
-
-EXTERNAL SOURCES:
-  SPXDataValidators:
-    :path: ../
 
 SPEC CHECKSUMS:
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
-  SPXDataValidators: 8b9fa252d14ea17ab6c0793a3897aaa0d652a90f
 
 COCOAPODS: 0.34.2

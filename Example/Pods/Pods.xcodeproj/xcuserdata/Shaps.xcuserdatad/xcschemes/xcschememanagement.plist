@@ -4,32 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-SPXDataValidators-SPXDataValidators.xcscheme</key>
+		<key>Pods-FormValidationTests-Kiwi.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SPXDataValidators.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Tests-Kiwi.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Tests-SPXDataValidators.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Tests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SPXDataValidators.xcscheme</key>
+		<key>Pods-FormValidationTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CE7DB9E271796B1DBFA4C06</key>
+		<key>48481BB6A945CA05720D167D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>118BF5FB7BE751F96CA3E00F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4563524E33B2819B754F2D01</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>66F0273913427B8B4BD84038</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>75491987B354C9E4035965C3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9C6C5EDBA9EFFDC7A588CA1C</key>
+		<key>88CF6578808703C3F0542DC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,11 +9,5 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/shaps'
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
-  s.source_files = 'Pod/Classes'
-  s.resource_bundles = {
-    'SPXDataValidators' => ['Pod/Assets/*.png']
-  }
-
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.source_files = 'SPXDataValidator/**/*.h'
 end
