@@ -9,7 +9,17 @@
 
 Download the example project to see it in action, or checkout the presentation.
 
-Basically though, your code might look something like this:
+In its simplest for you can use a validator as such:
+
+``` objectivec
+
+SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
+self.signInButton.enabled = [validator validateValue:email error:nil]
+
+```
+
+
+To configure more complex validators for your UITextField's
 
 ``` objectivec
 
