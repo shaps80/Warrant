@@ -48,12 +48,9 @@ Often though you'll want to use UI components for validating user input. I've pr
   
 ``` objc
 
-- (void)validateField
-{
-  NSError *error = nil;
-  if (![self.emailField validateWithError:&error]) {
-    NSLog(@"%@", error);
-  }
+NSError *error = nil;
+if (![self.emailField validateWithError:&error]) {
+  NSLog(@"%@", error);
 }
 
 ```
@@ -101,14 +98,12 @@ Later, from some UI code you can use the **all new** SPXFormValidator:
 - (IBAction)textFieldDidChange:(UITextField *)textField
 {
   // update the state of the signInButton as the user types in any field
-  
   self.navigationItem.rightBarButtonItem.enabled = [SPXFormValidator validateFields:@[ self.emailField, self.passwordField ]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
   // decorate the current textField based on the validator  
-  
   cell.accessoryView = [SPXFormValidator validateField:textField] ? nil : [self accessoryView];
 }
 
