@@ -44,6 +44,35 @@ self.signInButton.enabled = [validator validateValue:email error:nil]
 
 ```
 
+Often though you'll want to use UI components for validating user input. I've provided categories for UITextField and UITextView so that they conform to my protocol <SPXDataField> but you can extend your own classes (UI or not) easily enough.
+  
+``` objc
+
+@interface UITextField (SPXDataValidatorAdditions) <SPXDataField>
+@end
+
+@implementation UITextField (SPXDataValidatorAdditions)
+
+- (void)applyValidator:(id<SPXDataValidator>)validator
+{
+  @synchronized(validator) {
+    self.dataValidator = validator;
+  }
+}
+
+- (BOOL)validateWithError:(out NSError *__autoreleasing *)error
+{
+  if (!self.dataValidator) {
+    return YES;
+  }
+  
+  return [self.dataValidator validateValue:self.text error:error];
+}
+
+@end
+
+```
+
 
 To configure more complex validators for your UITextField's
 
