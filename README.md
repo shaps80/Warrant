@@ -61,6 +61,8 @@ Later, from some UI code you would then call:
 
 ```
 
+Download and run the example project to see individual field validation in action ;)
+
 ## Installation
 
 SPXDataValidators is available through [CocoaPods](http://cocoapods.org). To install
