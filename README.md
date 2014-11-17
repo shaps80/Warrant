@@ -11,7 +11,7 @@ Download the example project to see it in action, or checkout the **[presentatio
 
 I will be adding to the validators in the near future, I have a few more that are just not tested yet ;)
 
-If you have ideas for really useful, reusable validators, please create a pull request and I'll get them in ASAP. Please don't submit any validators without tests though... that makes GitHub'ers sad :(
+If you have ideas for really useful, reusable validators, please create a pull request and I'll get them in ASAP. Please don't submit any validators without **tests** though... that makes GitHub'ers sad :(
 
 ## Usage
 
