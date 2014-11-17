@@ -51,6 +51,11 @@
                BlueprintName = "FormValidationTests"
                ReferencedContainer = "container:FormValidation.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SPXPasswordDataValidatorSpec/SPXPasswordDataValidator_ShouldFailWhenUsingAnInvalidCharacter">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

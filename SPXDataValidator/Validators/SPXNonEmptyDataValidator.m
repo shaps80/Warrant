@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-#import "SPXEmptyDataValidator.h"
+#import "SPXNonEmptyDataValidator.h"
 
-@implementation SPXEmptyDataValidator
+@implementation SPXNonEmptyDataValidator
 
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
   if ([value respondsToSelector:@selector(length)]) {
-    return (BOOL)[value length];
+    return ([value length]);
   }
   
-  return value;
+  return (value != nil);
 }
 
 @end

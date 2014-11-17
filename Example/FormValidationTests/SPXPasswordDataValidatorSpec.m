@@ -24,49 +24,55 @@
  */
 
 #import <Kiwi/Kiwi.h>
-#import "SPXEmailDataValidator.h"
+#import "SPXPasswordDataValidator.h"
+
+static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 
-SPEC_BEGIN(SPXEmailDataValidatorSpec)
+SPEC_BEGIN(SPXPasswordDataValidatorSpec)
 
-describe(@"SPXEmailDataValidator", ^{
+describe(@"SPXPasswordDataValidator", ^{
   
-  SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
-  NSString *email = @"shapsuk@me.com";
+  /**
+   *  Password requires a minimum of 6 characters and at least one number and alpha character. No other characters are supported
+   */
   
-  it(@"should pass with valid email", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  SPXPasswordDataValidator *validator = [SPXPasswordDataValidator validatorWithRegularExpression:PasswordRegex];
+  NSString *password = @"password123";
+  
+  it(@"should pass with valid password", ^{
+    BOOL isValid = [validator validateValue:password error:nil];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
   
-  email = @"shapsuk@me_com";
+  password = @"1g";
   
-  it(@"should fail with invalid email", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  it(@"should fail when less than 6 characters", ^{
+    BOOL isValid = [validator validateValue:password error:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   
-  email = @"@me.com";
+  password = @"123456";
   
-  it(@"should fail when missing local part", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  it(@"should fail when missing an alpha character", ^{
+    BOOL isValid = [validator validateValue:password error:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   
-  email = @"shapsukme.com";
+  password = @"asfgdjhas";
   
-  it(@"should fail when missing symbol", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  it(@"should fail when missing a number", ^{
+    BOOL isValid = [validator validateValue:password error:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   
-  email = @"shapsuk%me.com";
+  password = @"asd!343";
   
-  it(@"should fail when using invalid symbol", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
+  it(@"should pass when using an non-alphanumeric character", ^{
+    BOOL isValid = [validator validateValue:password error:nil];
+    [[theValue(isValid) should] equal:theValue(YES)];
   });
-  
+
 });
 
 SPEC_END

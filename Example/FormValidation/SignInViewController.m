@@ -11,7 +11,7 @@
 #import "SPXCompoundDataValidator.h"
 #import "SPXEmailDataValidator.h"
 #import "SPXPasswordDataValidator.h"
-#import "SPXEmptyDataValidator.h"
+#import "SPXNonEmptyDataValidator.h"
 
 #import "UITextField+SPXDataValidatorAdditions.h"
 #import "UserInterfaceFormValidator.h"
@@ -48,7 +48,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 - (void)configureValidators
 {
-  SPXEmptyDataValidator *emptyValidator = [SPXEmptyDataValidator new];
+  SPXNonEmptyDataValidator *emptyValidator = [SPXNonEmptyDataValidator new];
   SPXEmailDataValidator *emailValidator = [SPXEmailDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];

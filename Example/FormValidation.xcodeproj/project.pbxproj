@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45E304E8253BC85F2B16C2D2 /* libPods-FormValidationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */; };
+		54076D371A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54076D361A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m */; };
 		547D6C2C1A1908A80052B750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2B1A1908A80052B750 /* main.m */; };
 		547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2E1A1908A80052B750 /* AppDelegate.m */; };
 		547D6C321A1908A80052B750 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C311A1908A80052B750 /* SignInViewController.m */; };
@@ -19,8 +20,8 @@
 		547D6CBD1A196CF70052B750 /* SPXCompoundDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */; };
 		547D6CBE1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */; };
 		547D6CBF1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */; };
-		547D6CC01A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */; };
-		547D6CC11A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */; };
+		547D6CC01A196CF70052B750 /* SPXNonEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXNonEmptyDataValidator.m */; };
+		547D6CC11A196CF70052B750 /* SPXNonEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB41A196CF70052B750 /* SPXNonEmptyDataValidator.m */; };
 		547D6CC21A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */; };
 		547D6CC31A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */; };
 		547D6CC41A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CB91A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m */; };
@@ -28,6 +29,8 @@
 		547D6CC61A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */; };
 		547D6CC71A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */; };
 		547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */; };
+		54FE635A1A19792600CE278C /* SPXPasswordDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */; };
+		54FE635E1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		33686C4C07B6D417606A5430 /* Pods-FormValidationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormValidationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		54076D361A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXNonEmptyDataValidatorSpec.m; sourceTree = "<group>"; };
 		547D6C261A1908A80052B750 /* FormValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FormValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D6C2A1A1908A80052B750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		547D6C2B1A1908A80052B750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,8 +65,8 @@
 		547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidator.m; sourceTree = "<group>"; };
 		547D6CB11A196CF70052B750 /* SPXEmailDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXEmailDataValidator.h; sourceTree = "<group>"; };
 		547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmailDataValidator.m; sourceTree = "<group>"; };
-		547D6CB31A196CF70052B750 /* SPXEmptyDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXEmptyDataValidator.h; sourceTree = "<group>"; };
-		547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmptyDataValidator.m; sourceTree = "<group>"; };
+		547D6CB31A196CF70052B750 /* SPXNonEmptyDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXNonEmptyDataValidator.h; sourceTree = "<group>"; };
+		547D6CB41A196CF70052B750 /* SPXNonEmptyDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXNonEmptyDataValidator.m; sourceTree = "<group>"; };
 		547D6CB51A196CF70052B750 /* SPXPasswordDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXPasswordDataValidator.h; sourceTree = "<group>"; };
 		547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordDataValidator.m; sourceTree = "<group>"; };
 		547D6CB81A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SPXDataValidatorAdditions.h"; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		547D6CBA1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+SPXDataValidatorAdditions.h"; sourceTree = "<group>"; };
 		547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+SPXDataValidatorAdditions.m"; sourceTree = "<group>"; };
 		547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXEmailDataValidatorSpec.m; sourceTree = "<group>"; };
+		54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordDataValidatorSpec.m; sourceTree = "<group>"; };
+		54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidatorSpec.m; sourceTree = "<group>"; };
 		7C98B65830CF3BF2289E151A /* Pods-FormValidationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormValidationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FormValidationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +156,9 @@
 			children = (
 				547D6C461A1908A80052B750 /* Supporting Files */,
 				547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */,
+				54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */,
+				54076D361A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m */,
+				54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */,
 			);
 			name = Tests;
 			path = FormValidationTests;
@@ -194,8 +203,8 @@
 				547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */,
 				547D6CB11A196CF70052B750 /* SPXEmailDataValidator.h */,
 				547D6CB21A196CF70052B750 /* SPXEmailDataValidator.m */,
-				547D6CB31A196CF70052B750 /* SPXEmptyDataValidator.h */,
-				547D6CB41A196CF70052B750 /* SPXEmptyDataValidator.m */,
+				547D6CB31A196CF70052B750 /* SPXNonEmptyDataValidator.h */,
+				547D6CB41A196CF70052B750 /* SPXNonEmptyDataValidator.m */,
 				547D6CB51A196CF70052B750 /* SPXPasswordDataValidator.h */,
 				547D6CB61A196CF70052B750 /* SPXPasswordDataValidator.m */,
 			);
@@ -359,7 +368,7 @@
 				547D6CC61A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */,
 				547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */,
 				547D6CC41A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */,
-				547D6CC01A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */,
+				547D6CC01A196CF70052B750 /* SPXNonEmptyDataValidator.m in Sources */,
 				547D6CBE1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */,
 				547D6CC21A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */,
 				547D6C671A192A850052B750 /* UserInterfaceFormValidator.m in Sources */,
@@ -373,8 +382,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FE635E1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m in Sources */,
+				54076D371A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m in Sources */,
 				547D6CC31A196CF70052B750 /* SPXPasswordDataValidator.m in Sources */,
-				547D6CC11A196CF70052B750 /* SPXEmptyDataValidator.m in Sources */,
+				547D6CC11A196CF70052B750 /* SPXNonEmptyDataValidator.m in Sources */,
+				54FE635A1A19792600CE278C /* SPXPasswordDataValidatorSpec.m in Sources */,
 				547D6CBF1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */,
 				547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */,
 				547D6CC51A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */,

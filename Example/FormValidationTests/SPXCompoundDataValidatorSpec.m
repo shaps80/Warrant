@@ -24,46 +24,41 @@
  */
 
 #import <Kiwi/Kiwi.h>
+#import "SPXCompoundDataValidator.h"
+#import "SPXNonEmptyDataValidator.h"
 #import "SPXEmailDataValidator.h"
 
 
-SPEC_BEGIN(SPXEmailDataValidatorSpec)
+SPEC_BEGIN(SPXCompoundDataValidatorSpec)
 
-describe(@"SPXEmailDataValidator", ^{
+describe(@"SPXCompoundDataValidator", ^{
   
-  SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
-  NSString *email = @"shapsuk@me.com";
+  NSString *validEmail = @"shapsuk@me.com";
+  NSString *invalidEmail = @"shapsukme.com";
   
-  it(@"should pass with valid email", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  SPXEmailDataValidator *emailValidator = [SPXEmailDataValidator new];
+  SPXNonEmptyDataValidator *nonEmptyValidator = [SPXNonEmptyDataValidator new];
+  
+  NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emailValidator, nonEmptyValidator, nil];
+  SPXCompoundDataValidator *validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+
+  it(@"should pass when all validator pass", ^{
+    BOOL isValid = [validator validateValue:validEmail error:nil];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
   
-  email = @"shapsuk@me_com";
+  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAny];
   
-  it(@"should fail with invalid email", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
+  it(@"should pass when 1 validator passes", ^{
+    BOOL isValid = [validator validateValue:invalidEmail error:nil];
+    [[theValue(isValid) should] equal:theValue(YES)];
   });
   
-  email = @"@me.com";
   
-  it(@"should fail when missing local part", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
+  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
   
-  email = @"shapsukme.com";
-  
-  it(@"should fail when missing symbol", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
-  
-  email = @"shapsuk%me.com";
-  
-  it(@"should fail when using invalid symbol", ^{
-    BOOL isValid = [validator validateValue:email error:nil];
+  it(@"should fail if 1 validator fails", ^{
+    BOOL isValid = [validator validateValue:invalidEmail error:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   

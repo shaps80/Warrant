@@ -34,7 +34,7 @@
       return YES;
     }
     
-    if (![validator validateValue:value error:error]) {
+    if (![validator validateValue:value error:error] && self.validationType == SPXCompoundDataValidatorValidateAll) {
       return NO;
     }
   }

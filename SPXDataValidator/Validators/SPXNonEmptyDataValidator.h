@@ -13,6 +13,6 @@
 /**
  *  An empty data validator determines whether or not the value is empty
  */
-@interface SPXEmptyDataValidator : NSObject <SPXDataValidator>
+@interface SPXNonEmptyDataValidator : NSObject <SPXDataValidator>
 
 @end
