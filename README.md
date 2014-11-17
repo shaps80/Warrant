@@ -37,7 +37,7 @@ When designing your validators remember these basic rules:
 
 In its simplest form you can use a validator as such:
 
-``` objectivec
+``` objc
 
 SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
 self.signInButton.enabled = [validator validateValue:email error:nil]
@@ -47,7 +47,7 @@ self.signInButton.enabled = [validator validateValue:email error:nil]
 
 To configure more complex validators for your UITextField's
 
-``` objectivec
+``` objc
 
 - (void)configureValidators
 {
@@ -72,7 +72,7 @@ This is highly reusable and allows you to easily define all your validators in o
 
 Later, from some UI code you would then call:
 
-``` objectivec
+``` objc
 
 - (BOOL)isFormReady
 {
