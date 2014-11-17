@@ -9,6 +9,10 @@
 
 Download the example project to see it in action, or checkout the **[presentation](https://github.com/shaps80/SPXDataValidators/blob/master/Data%20Validation%20-%20Presentation.pdf?raw=true)**.
 
+I will be adding to the validators in the near future, I have a few more that are just not tested yet ;)
+
+If you have ideas for really useful, reusable validators, pleaese create a pull request and I'll get them in ASAP. Please don't submit any validators without tests though... that makes GitHub'ers sad :(
+
 In its simplest form you can use a validator as such:
 
 ``` objectivec
