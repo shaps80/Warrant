@@ -30,6 +30,7 @@
 		547D6CC71A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CBB1A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m */; };
 		547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */; };
 		54AD21B01A1A1ECA00C8C71A /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD21AF1A1A1ECA00C8C71A /* CreateAccountViewController.m */; };
+		54AD21B71A1A2B0500C8C71A /* PasswordConfirmationField.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD21B61A1A2B0500C8C71A /* PasswordConfirmationField.m */; };
 		54FE635A1A19792600CE278C /* SPXPasswordDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */; };
 		54FE635E1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		54AD21AE1A1A1ECA00C8C71A /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
 		54AD21AF1A1A1ECA00C8C71A /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		54AD21B11A1A232000C8C71A /* SPXDataField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXDataField.h; sourceTree = "<group>"; };
+		54AD21B51A1A2B0500C8C71A /* PasswordConfirmationField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordConfirmationField.h; sourceTree = "<group>"; };
+		54AD21B61A1A2B0500C8C71A /* PasswordConfirmationField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordConfirmationField.m; sourceTree = "<group>"; };
 		54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordDataValidatorSpec.m; sourceTree = "<group>"; };
 		54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidatorSpec.m; sourceTree = "<group>"; };
 		7C98B65830CF3BF2289E151A /* Pods-FormValidationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FormValidationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FormValidationTests/Pods-FormValidationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				54AD21AF1A1A1ECA00C8C71A /* CreateAccountViewController.m */,
 				547D6C651A192A850052B750 /* FormValidator.h */,
 				547D6C661A192A850052B750 /* FormValidator.m */,
+				54AD21B51A1A2B0500C8C71A /* PasswordConfirmationField.h */,
+				54AD21B61A1A2B0500C8C71A /* PasswordConfirmationField.m */,
 			);
 			name = "User Interface";
 			path = FormValidation;
@@ -288,6 +293,12 @@
 				TargetAttributes = {
 					547D6C251A1908A80052B750 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = V2CWYL9AN8;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					547D6C411A1908A80052B750 = {
 						CreatedOnToolsVersion = 6.1;
@@ -374,6 +385,7 @@
 			files = (
 				547D6CC61A196CF70052B750 /* UITextView+SPXDataValidatorAdditions.m in Sources */,
 				547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */,
+				54AD21B71A1A2B0500C8C71A /* PasswordConfirmationField.m in Sources */,
 				547D6CC41A196CF70052B750 /* UITextField+SPXDataValidatorAdditions.m in Sources */,
 				547D6CC01A196CF70052B750 /* SPXNonEmptyDataValidator.m in Sources */,
 				547D6CBE1A196CF70052B750 /* SPXEmailDataValidator.m in Sources */,
@@ -513,10 +525,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FormValidation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -524,10 +539,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FormValidation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -9,6 +9,7 @@
 #import "CreateAccountViewController.h"
 #import "FormValidator.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
+#import "PasswordConfirmationField.h"
 
 @interface CreateAccountViewController () <UITextFieldDelegate>
 
@@ -16,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UITextField *confirmationField;
 @property (nonatomic, strong) FormValidator *formValidator;
+@property (nonatomic, strong) PasswordConfirmationField *passwordConfirmationField;
 
 @end
 
@@ -31,12 +33,22 @@
 {
   [self.emailField applyValidator:[FormValidator emailValidator]];
   [self.passwordField applyValidator:[FormValidator passwordValidator]];
+  [self.confirmationField applyValidator:[FormValidator passwordValidator]];
+  
+  self.passwordConfirmationField = [PasswordConfirmationField new];
+  self.passwordConfirmationField.passwordField = self.passwordField;
+  self.passwordConfirmationField.confirmationField = self.confirmationField;
+  
+  [self.passwordConfirmationField applyValidator:[FormValidator passwordValidator]];
 }
 
 - (void)form:(FormValidator *)form didChangeValidity:(BOOL)isValid
 {
   self.navigationItem.rightBarButtonItem.enabled = isValid;
 }
+
+
+
 
 #pragma mark - TextField Delegate
 
@@ -49,7 +61,7 @@
 - (IBAction)textFieldDidChange:(UITextField *)textField
 {
   // update the state of the signInButton as the user types in any field
-  self.navigationItem.rightBarButtonItem.enabled = [FormValidator validateFields:@[ self.emailField, self.passwordField ]];
+  self.navigationItem.rightBarButtonItem.enabled = [FormValidator validateFields:@[ self.emailField, self.passwordConfirmationField ]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -58,6 +70,8 @@
   if (![FormValidator validateField:textField]) {
     [self cellForTextField:textField].accessoryView = [self accessoryView];
   }
+  
+  [FormValidator validateField:self.passwordConfirmationField];
 }
 
 

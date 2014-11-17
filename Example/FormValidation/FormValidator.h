@@ -7,15 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "SPXCompoundDataValidator.h"
-#import "SPXEmailDataValidator.h"
-#import "SPXPasswordDataValidator.h"
-#import "SPXNonEmptyDataValidator.h"
-
 #import "SPXDataField.h"
-
-@protocol FormValidatorDelegate;
+#import "SPXCompoundDataValidator.h"
 
 
 /**
@@ -23,7 +16,16 @@
  */
 @interface FormValidator : NSObject
 
+
+/**
+ *  Validates an array of fields, an entire form
+ */
 + (BOOL)validateFields:(NSArray *)fields;
+
+
+/**
+ *  Validates a single field
+ */
 + (BOOL)validateField:(id <SPXDataField>)field;
 
 

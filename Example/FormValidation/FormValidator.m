@@ -10,13 +10,22 @@
 
 #import "SPXDataValidator.h"
 #import "SPXDataField.h"
+
+#import "SPXEmailDataValidator.h"
+#import "SPXPasswordDataValidator.h"
+#import "SPXNonEmptyDataValidator.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
 
 static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
+/**
+ Usually I'd also assert that fields ONLY contains objects conforming to <SPXDataField>
+ but for this example, I'll just assume I'm right ;)
+ */
+
 @implementation FormValidator
 
-#pragma mark - Validation
+#pragma mark - Field Validation
 
 + (BOOL)validateFields:(NSArray *)fields
 {
@@ -35,6 +44,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   
   if (![field validateWithError:&error]) {
     if (error) {
+      NSLog(@"%@", error);
       return NO;
     }
   }
