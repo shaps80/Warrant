@@ -1,28 +1,25 @@
 //
-//  MasterViewController.m
+//  CreateAccountViewController.m
 //  FormValidation
 //
-//  Created by Shaps Mohsenin on 16/11/2014.
+//  Created by Shaps Mohsenin on 17/11/2014.
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-#import "SignInViewController.h"
+#import "CreateAccountViewController.h"
 #import "FormValidator.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
 
-static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
-
-@interface SignInViewController () <UITextFieldDelegate>
+@interface CreateAccountViewController () <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
+@property (nonatomic, weak) IBOutlet UITextField *confirmationField;
 @property (nonatomic, strong) FormValidator *formValidator;
 
 @end
 
-@implementation SignInViewController
-
-#pragma mark - Configuration
+@implementation CreateAccountViewController
 
 - (void)viewDidLoad
 {
@@ -88,4 +85,3 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 }
 
 @end
-
