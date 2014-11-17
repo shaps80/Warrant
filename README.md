@@ -39,7 +39,7 @@ In its simplest form you can use a validator as such:
 
 ``` objc
 
-SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
+SPXRegexDataValidator *validator = [SPXRegexDataValidator emailValidator];
 self.signInButton.enabled = [validator validateValue:email error:nil]
 
 ```
@@ -68,21 +68,36 @@ To configure more complex validators for your UITextField's
 
 ```
 
-This is highly reusable and allows you to easily define all your validators in once place throughout your entire project if you want to.
-
-Later, from some UI code you would then call:
+For better reusability, try providing a factory class somewhere in your code for returning and possibly even caching them. This would reduce your view controller code to the following:
 
 ``` objc
 
-- (BOOL)isFormReady
+- (void)configureValidators
 {
-  for (UITextField *field in self.fields) {
-    if (![field validateWithError:nil]) {
-      return NO;
-    }
-  }
+  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
+  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
+}
+
+```
+
+This is highly reusable and allows you to easily define all your validators in once place throughout your entire project if you want to.
+
+Later, from some UI code you can use the **all new** SPXFormValidator:
+
+``` objc
+
+- (IBAction)textFieldDidChange:(UITextField *)textField
+{
+  // update the state of the signInButton as the user types in any field
   
-  return YES;
+  self.navigationItem.rightBarButtonItem.enabled = [SPXFormValidator validateFields:@[ self.emailField, self.passwordField ]];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+  // decorate the current textField based on the validator  
+  
+  cell.accessoryView = [SPXFormValidator validateField:textField] ? nil : [self accessoryView];
 }
 
 ```
