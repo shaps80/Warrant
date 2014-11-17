@@ -25,6 +25,8 @@ I couldn't find a decent solution, so I built it myself. Its pretty simple, but 
 I will be adding to the validators in the near future, I have a few more that are just not tested yet ;)
 I'll add a nice one tomorrow for validating multiple fields (useful for confirming passwords).
 
+## Pull Requests
+
 If you have ideas for really useful, reusable validators, please create a pull request and I'll get them in ASAP. Please don't submit any validators without **tests** though... that makes GitHub'ers sad :( 
 
 When designing your validators remember these basic rules:
