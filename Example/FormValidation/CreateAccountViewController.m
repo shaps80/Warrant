@@ -7,17 +7,18 @@
 //
 
 #import "CreateAccountViewController.h"
-#import "FormValidator.h"
+#import "ValidatorFactory.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
-#import "PasswordConfirmationField.h"
+#import "SPXPasswordValidationField.h"
+#import "SPXFormValidator.h"
 
 @interface CreateAccountViewController () <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UITextField *confirmationField;
-@property (nonatomic, strong) FormValidator *formValidator;
-@property (nonatomic, strong) PasswordConfirmationField *passwordConfirmationField;
+@property (nonatomic, strong) ValidatorFactory *formValidator;
+@property (nonatomic, strong) SPXPasswordValidationField *passwordConfirmationField;
 
 @end
 
@@ -31,18 +32,15 @@
 
 - (void)configureValidators
 {
-  [self.emailField applyValidator:[FormValidator emailValidator]];
-  [self.passwordField applyValidator:[FormValidator passwordValidator]];
-  [self.confirmationField applyValidator:[FormValidator passwordValidator]];
+  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
+  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
+  [self.confirmationField applyValidator:[ValidatorFactory passwordValidator]];
   
-  self.passwordConfirmationField = [PasswordConfirmationField new];
-  self.passwordConfirmationField.passwordField = self.passwordField;
-  self.passwordConfirmationField.confirmationField = self.confirmationField;
-  
-  [self.passwordConfirmationField applyValidator:[FormValidator passwordValidator]];
+  self.passwordConfirmationField = [SPXPasswordValidationField fieldForPasswordField:self.emailField confirmationField:self.passwordField];
+  [self.passwordConfirmationField applyValidator:[ValidatorFactory passwordValidator]];
 }
 
-- (void)form:(FormValidator *)form didChangeValidity:(BOOL)isValid
+- (void)form:(ValidatorFactory *)form didChangeValidity:(BOOL)isValid
 {
   self.navigationItem.rightBarButtonItem.enabled = isValid;
 }
@@ -61,17 +59,17 @@
 - (IBAction)textFieldDidChange:(UITextField *)textField
 {
   // update the state of the signInButton as the user types in any field
-  self.navigationItem.rightBarButtonItem.enabled = [FormValidator validateFields:@[ self.emailField, self.passwordConfirmationField ]];
+  self.navigationItem.rightBarButtonItem.enabled = [SPXFormValidator validateFields:@[ self.emailField, self.passwordConfirmationField ]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
   // update the accessoryView based on the validity of the textField
-  if (![FormValidator validateField:textField]) {
+  if (![SPXFormValidator validateField:textField]) {
     [self cellForTextField:textField].accessoryView = [self accessoryView];
   }
   
-  [FormValidator validateField:self.passwordConfirmationField];
+  [SPXFormValidator validateField:self.passwordConfirmationField];
 }
 
 

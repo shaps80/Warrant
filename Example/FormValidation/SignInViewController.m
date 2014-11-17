@@ -7,8 +7,9 @@
 //
 
 #import "SignInViewController.h"
-#import "FormValidator.h"
+#import "ValidatorFactory.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
+#import "SPXFormValidator.h"
 
 static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
@@ -16,7 +17,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
-@property (nonatomic, strong) FormValidator *formValidator;
+@property (nonatomic, strong) ValidatorFactory *formValidator;
 
 @end
 
@@ -32,11 +33,11 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 - (void)configureValidators
 {
-  [self.emailField applyValidator:[FormValidator emailValidator]];
-  [self.passwordField applyValidator:[FormValidator passwordValidator]];
+  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
+  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
 }
 
-- (void)form:(FormValidator *)form didChangeValidity:(BOOL)isValid
+- (void)form:(ValidatorFactory *)form didChangeValidity:(BOOL)isValid
 {
   self.navigationItem.rightBarButtonItem.enabled = isValid;
 }
@@ -52,13 +53,13 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 - (IBAction)textFieldDidChange:(UITextField *)textField
 {
   // update the state of the signInButton as the user types in any field
-  self.navigationItem.rightBarButtonItem.enabled = [FormValidator validateFields:@[ self.emailField, self.passwordField ]];
+  self.navigationItem.rightBarButtonItem.enabled = [SPXFormValidator validateFields:@[ self.emailField, self.passwordField ]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
   // update the accessoryView based on the validity of the textField
-  if (![FormValidator validateField:textField]) {
+  if (![SPXFormValidator validateField:textField]) {
     [self cellForTextField:textField].accessoryView = [self accessoryView];
   }
 }

@@ -26,7 +26,7 @@
 #import <Kiwi/Kiwi.h>
 #import "SPXCompoundDataValidator.h"
 #import "SPXNonEmptyDataValidator.h"
-#import "SPXEmailDataValidator.h"
+#import "SPXRegexDataValidator.h"
 
 
 SPEC_BEGIN(SPXCompoundDataValidatorSpec)
@@ -36,7 +36,7 @@ describe(@"SPXCompoundDataValidator", ^{
   NSString *validEmail = @"shapsuk@me.com";
   NSString *invalidEmail = @"shapsukme.com";
   
-  SPXEmailDataValidator *emailValidator = [SPXEmailDataValidator new];
+  SPXRegexDataValidator *emailValidator = [SPXRegexDataValidator emailValidator];
   SPXNonEmptyDataValidator *nonEmptyValidator = [SPXNonEmptyDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emailValidator, nonEmptyValidator, nil];

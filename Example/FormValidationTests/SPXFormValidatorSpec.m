@@ -24,55 +24,40 @@
  */
 
 #import <Kiwi/Kiwi.h>
+#import "SPXFormValidator.h"
 #import "SPXRegexDataValidator.h"
+#import "UITextField+SPXDataValidatorAdditions.h"
 
 static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 
-SPEC_BEGIN(SPXPasswordDataValidatorSpec)
+SPEC_BEGIN(SPXFormValidatorSpec)
 
-describe(@"Password Validation", ^{
+describe(@"SPXFormValidator", ^{
   
-  /**
-   *  Password requires a minimum of 6 characters and at least one number and alpha character. No other characters are supported
-   */
+  SPXRegexDataValidator *emailValidator = [SPXRegexDataValidator emailValidator];
+  SPXRegexDataValidator *passwordValidator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
   
-  SPXRegexDataValidator *validator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
-  NSString *password = @"password123";
+  UITextField *emailField = [UITextField new];
+  UITextField *passwordField = [UITextField new];
   
-  it(@"should pass with valid password", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
+  emailField.text = @"shaps80@me.com";
+  passwordField.text = @"password123";
+  
+  [emailField applyValidator:emailValidator];
+  [passwordField applyValidator:passwordValidator];
+
+  it(@"should pass if all validators are valid", ^{
+    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ]];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
   
-  password = @"1g";
-  
-  it(@"should fail when less than 6 characters", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
+  it(@"should fail if at least one validator is invalid", ^{
+    passwordField.text = @"password";
+    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ]];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   
-  password = @"123456";
-  
-  it(@"should fail when missing an alpha character", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
-  
-  password = @"asfgdjhas";
-  
-  it(@"should fail when missing a number", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
-  
-  password = @"asd!343";
-  
-  it(@"should pass when using an non-alphanumeric character", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(YES)];
-  });
-
 });
 
 SPEC_END

@@ -24,52 +24,37 @@
  */
 
 #import <Kiwi/Kiwi.h>
+#import "SPXPasswordValidationField.h"
 #import "SPXRegexDataValidator.h"
+#import "UITextField+SPXDataValidatorAdditions.h"
 
 static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 
-SPEC_BEGIN(SPXPasswordDataValidatorSpec)
+SPEC_BEGIN(SPXPasswordValidationFieldSpec)
 
-describe(@"Password Validation", ^{
+describe(@"SPXPasswordValidationField", ^{
   
-  /**
-   *  Password requires a minimum of 6 characters and at least one number and alpha character. No other characters are supported
-   */
-  
+  UITextField *passwordField = [UITextField new];
+  UITextField *confirmationField = [UITextField new];
   SPXRegexDataValidator *validator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
-  NSString *password = @"password123";
   
-  it(@"should pass with valid password", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(YES)];
-  });
+  [passwordField applyValidator:validator];
+  [confirmationField applyValidator:validator];
   
-  password = @"1g";
+  passwordField.text = @"password123";
   
-  it(@"should fail when less than 6 characters", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
+  SPXPasswordValidationField *field = [SPXPasswordValidationField fieldForPasswordField:passwordField confirmationField:confirmationField];
+  
+  it(@"should fail if at least one field is invalid", ^{
+    confirmationField.text = @"password321";
+    BOOL isValid = [field validateWithError:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   
-  password = @"123456";
-  
-  it(@"should fail when missing an alpha character", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
-  
-  password = @"asfgdjhas";
-  
-  it(@"should fail when missing a number", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
-    [[theValue(isValid) should] equal:theValue(NO)];
-  });
-  
-  password = @"asd!343";
-  
-  it(@"should pass when using an non-alphanumeric character", ^{
-    BOOL isValid = [validator validateValue:password error:nil];
+  it(@"should pass if both fields are valid", ^{
+    confirmationField.text = @"password123";
+    BOOL isValid = [field validateWithError:nil];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
 

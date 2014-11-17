@@ -12,21 +12,9 @@
 
 
 /**
- *  This clas isn't necessarily a good approach, but demonstrates flexibility and reuse
+ *  A convenience factory for returning project-specific validators
  */
-@interface FormValidator : NSObject
-
-
-/**
- *  Validates an array of fields, an entire form
- */
-+ (BOOL)validateFields:(NSArray *)fields;
-
-
-/**
- *  Validates a single field
- */
-+ (BOOL)validateField:(id <SPXDataField>)field;
+@interface ValidatorFactory : NSObject
 
 
 /**
@@ -35,5 +23,6 @@
  */
 + (SPXCompoundDataValidator *)emailValidator;
 + (SPXCompoundDataValidator *)passwordValidator;
+
 
 @end

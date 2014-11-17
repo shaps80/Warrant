@@ -24,14 +24,14 @@
  */
 
 #import <Kiwi/Kiwi.h>
-#import "SPXEmailDataValidator.h"
+#import "SPXRegexDataValidator.h"
 
 
 SPEC_BEGIN(SPXEmailDataValidatorSpec)
 
 describe(@"SPXEmailDataValidator", ^{
   
-  SPXEmailDataValidator *validator = [SPXEmailDataValidator new];
+  SPXRegexDataValidator *validator = [SPXRegexDataValidator emailValidator];
   NSString *email = @"shapsuk@me.com";
   
   it(@"should pass with valid email", ^{

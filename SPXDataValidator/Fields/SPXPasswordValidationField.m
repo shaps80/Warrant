@@ -6,13 +6,23 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-#import "PasswordConfirmationField.h"
+#import "SPXPasswordValidationField.h"
 
-@interface PasswordConfirmationField ()
+@interface SPXPasswordValidationField ()
+@property (nonatomic, strong) UITextField *passwordField;
+@property (nonatomic, strong) UITextField *confirmationField;
 @property (nonatomic, strong) id <SPXDataValidator> validator;
 @end
 
-@implementation PasswordConfirmationField
+@implementation SPXPasswordValidationField
+
++ (instancetype)fieldForPasswordField:(UITextField *)passwordField confirmationField:(UITextField *)confirmationField
+{
+  SPXPasswordValidationField *field = [SPXPasswordValidationField new];
+  field.passwordField = passwordField;
+  field.confirmationField = confirmationField;
+  return field;
+}
 
 - (void)applyValidator:(id<SPXDataValidator>)validator
 {
