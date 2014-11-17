@@ -33,7 +33,7 @@ When designing your validators remember these basic rules:
 * Ensure your validators are stateless and immutable
 * Write unit tests!!!
 
-## Usage
+## Simple Usage
 
 In its simplest form you can use a validator as such:
 
@@ -44,37 +44,21 @@ self.signInButton.enabled = [validator validateValue:email error:nil]
 
 ```
 
-Often though you'll want to use UI components for validating user input. I've provided categories for UITextField and UITextView so that they conform to my protocol <SPXDataField> but you can extend your own classes (UI or not) easily enough.
+Often though you'll want to use UI components for validating user input. I've provided categories for UITextField and UITextView so that they conform to my protocol <SPXDataField> but you can extend your own classes (UI or not) easily enough, and then call something like the following:
   
 ``` objc
 
-@interface UITextField (SPXDataValidatorAdditions) <SPXDataField>
-@end
-
-@implementation UITextField (SPXDataValidatorAdditions)
-
-- (void)applyValidator:(id<SPXDataValidator>)validator
+- (void)validateField
 {
-  @synchronized(validator) {
-    self.dataValidator = validator;
+  NSError *error = nil;
+  if (![self.emailField validateWithError:&error]) {
+    NSLog(@"%@", error);
   }
 }
-
-- (BOOL)validateWithError:(out NSError *__autoreleasing *)error
-{
-  if (!self.dataValidator) {
-    return YES;
-  }
-  
-  return [self.dataValidator validateValue:self.text error:error];
-}
-
-@end
 
 ```
 
-
-To configure more complex validators for your UITextField's
+## Compound Validators
 
 ``` objc
 
@@ -96,6 +80,8 @@ To configure more complex validators for your UITextField's
 }
 
 ```
+
+## User Interface
 
 For better reusability, try providing a factory class somewhere in your code for returning and possibly even caching them. This would reduce your view controller code to the following:
 
