@@ -87,11 +87,8 @@ For better reusability, try providing a factory class somewhere in your code for
 
 ``` objc
 
-- (void)configureValidators
-{
-  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
-  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
-}
+[self.emailField applyValidator:[ValidatorFactory emailValidator]];
+[self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
 
 ```
 
