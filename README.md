@@ -42,6 +42,25 @@ To configure more complex validators for your UITextField's
 
 ```
 
+This is highly reusable and allows you to easily define all your validators in once place throughout your entire project if you want to.
+
+Later, from some UI code you would then call:
+
+``` objectivec
+
+- (BOOL)isFormReady
+{
+  for (UITextField *field in self.fields) {
+    if (![field validateWithError:nil]) {
+      return NO;
+    }
+  }
+  
+  return YES;
+}
+
+```
+
 ## Installation
 
 SPXDataValidators is available through [CocoaPods](http://cocoapods.org). To install
