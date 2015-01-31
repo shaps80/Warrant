@@ -52,7 +52,12 @@ static NSString * const SPXEmailValidatorRegularExpression =
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
   if ([value respondsToSelector:@selector(length)]) {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:self.validationRegex options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:self.validationRegex options:NSRegularExpressionCaseInsensitive error:error];
+    
+    if (!regex && *error) {
+      return NO;
+    }
+    
     NSString *string = value;
     
     if ([value isKindOfClass:[NSAttributedString class]]) {

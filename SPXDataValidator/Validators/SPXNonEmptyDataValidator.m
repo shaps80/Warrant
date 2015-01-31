@@ -13,6 +13,10 @@
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
   if ([value respondsToSelector:@selector(length)]) {
+    if (![value length] && error) {
+      NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : @"Empty value" };
+      *error = [NSError errorWithDomain:@"uk.co.snippex.validation" code:-1 userInfo:userInfo];
+    }
     return ([value length]);
   }
   
