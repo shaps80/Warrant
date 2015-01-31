@@ -33,7 +33,7 @@
 
 + (instancetype)validatorWithBlock:(BOOL (^)(id value, NSError *__autoreleasing *))validationBlock
 {
-  AssertTrueOrReturnNil(validationBlock);
+  NSAssert(validationBlock, @"A validationBlock MUST be provided");
   
   SPXBlockDataValidator *validator = [SPXBlockDataValidator new];
   validator.validationBlock = validationBlock;
