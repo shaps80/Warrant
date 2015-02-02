@@ -1,7 +1,7 @@
 language: objective-c
 xcode_workspace: Example/FormValidation.xcworkspace
 xcode_scheme: FormValidation
-xcode_sdk: iphonesimulator8.0
+xcode_sdk: iphonesimulator8.1
 
 before_install: 
 - brew update
