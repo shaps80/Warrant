@@ -6,15 +6,27 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import "SPXPasswordValidationField.h"
 
 @interface SPXPasswordValidationField ()
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) UITextField *confirmationField;
-@property (nonatomic, strong) id <SPXDataValidator> dataValidator;
 @end
 
 @implementation SPXPasswordValidationField
+
+- (void)setDataValidator:(id<SPXDataValidator>)validator
+{
+  @synchronized(self) {
+    objc_setAssociatedObject(self, @selector(dataValidator), validator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  }
+}
+
+- (id<SPXDataValidator>)dataValidator
+{
+  return objc_getAssociatedObject(self, @selector(dataValidator));
+}
 
 + (instancetype)fieldForPasswordField:(UITextField *)passwordField confirmationField:(UITextField *)confirmationField
 {

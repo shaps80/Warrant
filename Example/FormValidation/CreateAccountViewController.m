@@ -32,12 +32,12 @@
 
 - (void)configureValidators
 {
-  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
-  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
-  [self.confirmationField applyValidator:[ValidatorFactory passwordValidator]];
+  self.emailField.dataValidator = [ValidatorFactory emailValidator];
+  self.passwordField.dataValidator = [ValidatorFactory passwordValidator];
+  self.confirmationField.dataValidator = [ValidatorFactory passwordValidator];
   
-  self.passwordConfirmationField = [SPXPasswordValidationField fieldForPasswordField:self.emailField confirmationField:self.passwordField];
-  [self.passwordConfirmationField applyValidator:[ValidatorFactory passwordValidator]];
+  self.passwordConfirmationField = [SPXPasswordValidationField fieldForPasswordField:self.passwordField confirmationField:self.passwordField];
+  self.passwordConfirmationField.dataValidator = [ValidatorFactory passwordValidator];
 }
 
 - (void)form:(ValidatorFactory *)form didChangeValidity:(BOOL)isValid

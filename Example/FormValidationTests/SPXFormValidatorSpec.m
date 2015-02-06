@@ -44,8 +44,8 @@ describe(@"SPXFormValidator", ^{
   emailField.text = @"shaps80@me.com";
   passwordField.text = @"password123";
   
-  [emailField applyValidator:emailValidator];
-  [passwordField applyValidator:passwordValidator];
+  emailField.dataValidator = emailValidator;
+  passwordField.dataValidator = passwordValidator;
 
   it(@"should pass if all validators are valid", ^{
     BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ]];

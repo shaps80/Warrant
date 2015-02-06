@@ -39,9 +39,8 @@ describe(@"SPXPasswordValidationField", ^{
   UITextField *confirmationField = [UITextField new];
   SPXRegexDataValidator *validator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
   
-  [passwordField applyValidator:validator];
-  [confirmationField applyValidator:validator];
-  
+  passwordField.dataValidator = validator;
+  confirmationField.dataValidator = validator;
   passwordField.text = @"password123";
   
   SPXPasswordValidationField *field = [SPXPasswordValidationField fieldForPasswordField:passwordField confirmationField:confirmationField];

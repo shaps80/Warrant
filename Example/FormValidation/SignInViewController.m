@@ -11,8 +11,6 @@
 #import "UITextField+SPXDataValidatorAdditions.h"
 #import "SPXFormValidator.h"
 
-static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
-
 @interface SignInViewController () <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
@@ -33,8 +31,8 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 
 - (void)configureValidators
 {
-  [self.emailField applyValidator:[ValidatorFactory emailValidator]];
-  [self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
+  self.emailField.dataValidator = [ValidatorFactory emailValidator];
+  self.passwordField.dataValidator = [ValidatorFactory passwordValidator];
 }
 
 - (void)form:(ValidatorFactory *)form didChangeValidity:(BOOL)isValid

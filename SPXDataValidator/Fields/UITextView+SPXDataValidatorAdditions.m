@@ -18,19 +18,14 @@
 
 - (void)setDataValidator:(id<SPXDataValidator>)validator
 {
-  objc_setAssociatedObject(self, @selector(dataValidator), validator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  @synchronized(self) {
+    objc_setAssociatedObject(self, @selector(dataValidator), validator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  }
 }
 
 - (id<SPXDataValidator>)dataValidator
 {
   return objc_getAssociatedObject(self, @selector(dataValidator));
-}
-
-- (void)applyValidator:(id<SPXDataValidator>)validator
-{
-  @synchronized(validator) {
-    self.dataValidator = validator;
-  }
 }
 
 - (BOOL)validateWithError:(out NSError *__autoreleasing *)error

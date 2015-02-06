@@ -19,7 +19,7 @@
 /**
  *  Returns the data validator applied to this field
  */
-@property (nonatomic, readonly) IBOutlet id <SPXDataValidator> dataValidator;
+@property (nonatomic, strong) IBOutlet id <SPXDataValidator> dataValidator;
 
 
 @end

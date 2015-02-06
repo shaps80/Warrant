@@ -7,37 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPXDataField.h"
 #import "SPXDataValidator.h"
 
 
 /**
  *  This category on UITextView adds support for using SPXDataValidator's to validate input
  */
-@interface UITextView (SPXDataValidatorAdditions)
+@interface UITextView (SPXDataValidatorAdditions) <SPXDataField>
 
 
 /**
  *  Returns the data validator applied to this field
  */
-@property (nonatomic, readonly) IBOutlet id <SPXDataValidator> dataValidator;
-
-
-/**
- *  Applies the specified validator to this view. To apply multiple validators, see the SPXCompoundDataValidator class.
- *
- *  @param validator The validator to apply to this view.
- */
-- (void)applyValidator:(id <SPXDataValidator>)validator;
-
-
-/**
- *  Validates the current value of this view
- *
- *  @param error A pointer to an NSError object (optional)
- *
- *  @return Returns the result from [self.validator validateValue:self.text error:&error]. If no validator has been applied, this method will always return YES
- */
-- (BOOL)validateWithError:(out NSError * __autoreleasing *)error;
+@property (nonatomic, strong) IBOutlet id <SPXDataValidator> dataValidator;
 
 
 @end
