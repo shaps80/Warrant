@@ -27,30 +27,57 @@ static NSString * const SPXEmailValidatorRegularExpression =
 
 @implementation SPXRegexDataValidator
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+  self = [super init];
+  if (!self) return nil;
+  return self;
+}
+
+- (instancetype)init
+{
+  self = [super init];
+  if (!self) return nil;
+  return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+  // nothing to do
+}
+
 + (instancetype)validatorWithExpression:(NSString *)expression
 {
   SPXRegexDataValidator *validator = [SPXRegexDataValidator new];
   validator.validationRegex = expression;
-  
-  NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : @"Invalid value" };
-  validator.validationError = [NSError errorWithDomain:@"uk.co.snippex.validation" code:-1 userInfo:userInfo];
-  
   return validator;
 }
 
-+ (instancetype)emailValidator
+- (void)setRegexPattern:(NSString *)regexPattern
 {
-  SPXRegexDataValidator *validator = [SPXRegexDataValidator new];
-  validator.validationRegex = SPXEmailValidatorRegularExpression;
-  
-  NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : @"Invalid email address" };
-  validator.validationError = [NSError errorWithDomain:@"uk.co.snippex.validation" code:-1 userInfo:userInfo];
-  
-  return validator;
+  self.validationRegex = regexPattern;
+}
+
+- (NSString *)regexPattern
+{
+  return self.validationRegex;
+}
+
+- (NSString *)invalidErrorString
+{
+  return _invalidErrorString ?: @"Invalid value";
+}
+
+- (NSError *)validationError
+{
+  NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : self.invalidErrorString };
+  return [NSError errorWithDomain:@"uk.co.snippex.validation" code:-1 userInfo:userInfo];
 }
 
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
+  if (!self.validationRegex) return YES;
+  
   if ([value respondsToSelector:@selector(length)]) {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:self.validationRegex options:NSRegularExpressionCaseInsensitive error:error];
     
@@ -79,6 +106,19 @@ static NSString * const SPXEmailValidatorRegularExpression =
 - (NSString *)description
 {
   return [self dictionaryWithValuesForKeys:@[ @"validationRegex" ]].description;
+}
+
+@end
+
+@implementation SPXEmailDataValidator
+
+- (instancetype)init
+{
+  self = [super init];
+  if (!self) return nil;
+  super.invalidErrorString = @"Invalid email address";
+  super.regexPattern = SPXEmailValidatorRegularExpression;
+  return self;
 }
 
 @end

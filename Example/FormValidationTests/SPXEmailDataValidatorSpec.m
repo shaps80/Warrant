@@ -31,7 +31,7 @@ SPEC_BEGIN(SPXEmailDataValidatorSpec)
 
 describe(@"SPXEmailDataValidator", ^{
   
-  SPXRegexDataValidator *validator = [SPXRegexDataValidator emailValidator];
+  SPXRegexDataValidator *validator = [SPXEmailDataValidator new];
   NSString *email = @"shapsuk@me.com";
   
   it(@"should pass with valid email", ^{

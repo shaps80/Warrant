@@ -22,7 +22,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
 + (SPXCompoundDataValidator *)emailValidator
 {
   SPXNonEmptyDataValidator *emptyValidator = [SPXNonEmptyDataValidator new];
-  SPXRegexDataValidator *emailValidator = [SPXRegexDataValidator emailValidator];
+  SPXRegexDataValidator *emailValidator = [SPXEmailDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];
   return [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];

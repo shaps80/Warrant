@@ -9,11 +9,27 @@
 #import <Foundation/Foundation.h>
 #import "SPXDataValidator.h"
 
+@class SPXEmailDataValidator;
+
+
 
 /**
  *  This validator is useful for validating any type of regular expression against the value
  */
-@interface SPXRegexDataValidator : NSObject <SPXDataValidator>
+IB_DESIGNABLE
+@interface SPXRegexDataValidator : NSObject <SPXDataValidator, NSCoding>
+
+
+/**
+ *  Gets or sets the regex pattern used for matching
+ */
+@property (nonatomic, strong) IBInspectable NSString *regexPattern;
+
+
+/**
+ *  Gets or sets the error string to be presented when this validator fails
+ */
+@property (nonatomic, strong) IBInspectable NSString *invalidErrorString;
 
 
 /**
@@ -25,12 +41,9 @@
  */
 + (instancetype)validatorWithExpression:(NSString *)expression;
 
-/**
- *  Provides a convenience initializer for validating email addresses
- *
- *  @return A new regular expression validation, with its expression preconfigured to evaluate email addresses
- */
-+ (instancetype)emailValidator;
-
 
 @end
+
+@interface SPXEmailDataValidator : SPXRegexDataValidator
+@end
+

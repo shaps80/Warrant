@@ -35,7 +35,7 @@ SPEC_BEGIN(SPXFormValidatorSpec)
 
 describe(@"SPXFormValidator", ^{
   
-  SPXRegexDataValidator *emailValidator = [SPXRegexDataValidator emailValidator];
+  SPXRegexDataValidator *emailValidator = [SPXEmailDataValidator new];
   SPXRegexDataValidator *passwordValidator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
   
   UITextField *emailField = [UITextField new];

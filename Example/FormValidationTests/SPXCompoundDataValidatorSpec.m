@@ -36,7 +36,7 @@ describe(@"SPXCompoundDataValidator", ^{
   NSString *validEmail = @"shapsuk@me.com";
   NSString *invalidEmail = @"shapsukme.com";
   
-  SPXRegexDataValidator *emailValidator = [SPXRegexDataValidator emailValidator];
+  SPXRegexDataValidator *emailValidator = [SPXEmailDataValidator new];
   SPXNonEmptyDataValidator *nonEmptyValidator = [SPXNonEmptyDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emailValidator, nonEmptyValidator, nil];
