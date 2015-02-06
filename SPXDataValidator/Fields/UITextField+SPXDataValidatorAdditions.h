@@ -15,4 +15,11 @@
  */
 @interface UITextField (SPXDataValidatorAdditions) <SPXDataField>
 
+
+/**
+ *  Returns the data validator applied to this field
+ */
+@property (nonatomic, readonly) IBOutlet id <SPXDataValidator> dataValidator;
+
+
 @end

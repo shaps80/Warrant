@@ -17,6 +17,12 @@
 
 
 /**
+ *  Returns the data validator applied to this field
+ */
+@property (nonatomic, readonly) IBOutlet id <SPXDataValidator> dataValidator;
+
+
+/**
  *  Applies the specified validator to this view. To apply multiple validators, see the SPXCompoundDataValidator class.
  *
  *  @param validator The validator to apply to this view.
