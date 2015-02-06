@@ -11,7 +11,7 @@
 @interface SPXPasswordValidationField ()
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) UITextField *confirmationField;
-@property (nonatomic, strong) id <SPXDataValidator> validator;
+@property (nonatomic, strong) id <SPXDataValidator> dataValidator;
 @end
 
 @implementation SPXPasswordValidationField
@@ -27,7 +27,7 @@
 - (void)applyValidator:(id<SPXDataValidator>)validator
 {
   @synchronized(validator) {
-    self.validator = validator;
+    self.dataValidator = validator;
   }
 }
 
