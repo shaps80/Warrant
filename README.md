@@ -8,6 +8,7 @@
 ## Updates
 
 * Two new validators is now included `SPXEmailValidator` and `SPXBlockDataValidator`.
+* New `SPXFormValidator ` for validating multiple fields at once in your user interface
 * Validators can now be added to your `UITextField` and `UITextView` instances from Interface Builder.
 	- Validators can even be re-used in IB across multiple fields
 * New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
@@ -45,6 +46,12 @@ self.signInButton.enabled = [validator validateValue:email error:nil]
 
 ```
 
+If you're using `<SPXDataField>` instances -- e.g. `UITextField`, `UITextView`, etc...
+
+```objc
+self.signInButton.enabled = [SPXFormValidator validatorFields:@[ emailField, passwordField ]];
+```
+
 Often though you'll want to use UI components for validating user input. I've provided categories for UITextField and UITextView so that they conform to my protocol <SPXDataField> but you can extend your own classes (UI or not) easily enough, and then call something like the following:
   
 ``` objc
@@ -68,13 +75,13 @@ if (![self.emailField validateWithError:&error]) {
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];
   SPXCompoundDataValidator *usernameValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
 
-  [self.emailField applyValidator:usernameValidators];
+  self.emailField.dataValidator = usernameValidators;
 
-  SPXPasswordDataValidator *passValidator = [SPXPasswordDataValidator validatorWithRegularExpression:PasswordRegex];
+  SPXPasswordDataValidator *passValidator = [SPXRegexDataValidator validatorWithExpression:regex];
   validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, passValidator, nil];
   SPXCompoundDataValidator *passwordValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
 
-  [self.passwordField applyValidator:passwordValidators];
+  self.passwordField.dataValidator = passwordValidators;
 }
 
 ```
@@ -85,14 +92,14 @@ For better reusability, try providing a factory class somewhere in your code for
 
 ``` objc
 
-[self.emailField applyValidator:[ValidatorFactory emailValidator]];
-[self.passwordField applyValidator:[ValidatorFactory passwordValidator]];
+self.emailField = [ValidatorFactory emailValidator];
+self.passwordField.dataValidator = [ValidatorFactory passwordValidator];
 
 ```
 
 This is highly reusable and allows you to easily define all your validators in once place throughout your entire project if you want to.
 
-Later, from some UI code you can use the **all new** SPXFormValidator:
+This approach makes it much easier to use `SPXFormValidator` to validate all of your fields:
 
 ``` objc
 
@@ -125,7 +132,8 @@ If you have ideas for really useful, reusable validators, please create a pull r
 
 When designing your validators remember these basic rules:
 
-* Only perform **a single** type of validation
+* Its recommended you perform **a single** type of validation only per validator
+	* You can then use a compound validator for combining validators
 * Ensure your validators are stateless and immutable
 * Write unit tests!!!
 
