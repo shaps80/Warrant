@@ -7,7 +7,10 @@
 
 ## Updates
 
-* Two new validators is now included `SPXEmailValidator` and `SPXBlockDataValidator`.
+* Three new validators is now included:
+	* `SPXEmailDataValidator`
+	* `SPXBlockDataValidator`
+	* `SPXRegexDataValidator`
 * New `SPXFormValidator ` for validating multiple fields at once in your user interface
 * Validators can now be added to your `UITextField` and `UITextView` instances from Interface Builder.
 	- Validators can even be re-used in IB across multiple fields
