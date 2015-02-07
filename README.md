@@ -14,6 +14,8 @@
 
 <img src="Screenshots/IB.png" width="720" height="160" />
 
+>These validators work exceptionally well alongside another open-source project I released [SPXControls](https://github.com/shaps80/SPXControls)
+
 ## Validation done right!
 
 Download the example project to see it in action, or checkout the **[presentation](https://github.com/shaps80/SPXDataValidators/blob/master/Data%20Validation%20-%20Presentation.pdf?raw=true)**.
