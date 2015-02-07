@@ -12,7 +12,7 @@
 	- Validators can even be re-used in IB across multiple fields
 * New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
 
-<img src="Screenshots/IB.png" width="790" height="175" />
+<img src="Screenshots/IB.png" width="720" height="160" />
 
 ## Validation done right!
 
