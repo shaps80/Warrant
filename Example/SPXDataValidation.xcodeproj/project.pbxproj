@@ -18,7 +18,6 @@
 		547D6C381A1908A80052B750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C361A1908A80052B750 /* Main.storyboard */; };
 		547D6C3A1A1908A80052B750 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C391A1908A80052B750 /* Images.xcassets */; };
 		547D6C3D1A1908A80052B750 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547D6C3B1A1908A80052B750 /* LaunchScreen.xib */; };
-		547D6C671A192A850052B750 /* ValidatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C661A192A850052B750 /* ValidatorFactory.m */; };
 		547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6CC81A196D910052B750 /* SPXEmailDataValidatorSpec.m */; };
 		54AD21B01A1A1ECA00C8C71A /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD21AF1A1A1ECA00C8C71A /* CreateAccountViewController.m */; };
 		54FE635A1A19792600CE278C /* SPXPasswordDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */; };
@@ -63,8 +62,6 @@
 		547D6C3C1A1908A80052B750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		547D6C421A1908A80052B750 /* SPXDataValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPXDataValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D6C471A1908A80052B750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		547D6C651A192A850052B750 /* ValidatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatorFactory.h; sourceTree = "<group>"; };
-		547D6C661A192A850052B750 /* ValidatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatorFactory.m; sourceTree = "<group>"; };
 		547D6CAD1A196CF70052B750 /* SPXDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXDataValidator.h; sourceTree = "<group>"; };
 		547D6CAF1A196CF70052B750 /* SPXCompoundDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXCompoundDataValidator.h; sourceTree = "<group>"; };
 		547D6CB01A196CF70052B750 /* SPXCompoundDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidator.m; sourceTree = "<group>"; };
@@ -128,15 +125,6 @@
 				5420DE801A1A7D0B001D5480 /* SPXFormValidator.m */,
 			);
 			path = Form;
-			sourceTree = "<group>";
-		};
-		5420DE831A1A7E14001D5480 /* Validation Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				547D6C651A192A850052B750 /* ValidatorFactory.h */,
-				547D6C661A192A850052B750 /* ValidatorFactory.m */,
-			);
-			name = "Validation Helpers";
 			sourceTree = "<group>";
 		};
 		5420DE871A1A7F77001D5480 /* Fields */ = {
@@ -223,7 +211,6 @@
 		547D6C641A1925920052B750 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				5420DE831A1A7E14001D5480 /* Validation Helpers */,
 				547D6C361A1908A80052B750 /* Main.storyboard */,
 				547D6C301A1908A80052B750 /* SignInViewController.h */,
 				547D6C311A1908A80052B750 /* SignInViewController.m */,
@@ -444,7 +431,6 @@
 			files = (
 				547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */,
 				54AD21B01A1A1ECA00C8C71A /* CreateAccountViewController.m in Sources */,
-				547D6C671A192A850052B750 /* ValidatorFactory.m in Sources */,
 				547D6C321A1908A80052B750 /* SignInViewController.m in Sources */,
 				547D6C2C1A1908A80052B750 /* main.m in Sources */,
 			);

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SPXDataValidators"
-  s.version          = "1.3.1"
+  s.version          = "1.4.0"
   s.summary          = "Form and data validators done right!"
   s.homepage         = "https://github.com/shaps80/SPXDataValidators"
   s.license          = 'MIT'
