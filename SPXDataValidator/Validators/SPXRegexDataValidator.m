@@ -78,29 +78,29 @@ static NSString * const SPXEmailValidatorRegularExpression =
 {
   if (!self.validationRegex) return YES;
   
-  if ([value respondsToSelector:@selector(length)]) {
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:self.validationRegex options:NSRegularExpressionCaseInsensitive error:error];
-    
-    if (!regex && *error) {
-      return NO;
-    }
-    
-    NSString *string = value;
-    
-    if ([value isKindOfClass:[NSAttributedString class]]) {
-      string = [value string];
-    }
-    
-    NSUInteger matchCount = [regex numberOfMatchesInString:string options:0 range:NSMakeRange(0, [value length])];
-    
-    if (!matchCount && error) {
-      *error = self.validationError;
-    }
-    
-    return matchCount;
+  if (![value respondsToSelector:@selector(length)]) {
+    return NO;
+  }
+
+  NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:self.validationRegex options:NSRegularExpressionCaseInsensitive error:error];
+  
+  if (!regex && *error) {
+    return NO;
   }
   
-  return NO;
+  NSString *string = value;
+  
+  if ([value isKindOfClass:[NSAttributedString class]]) {
+    string = [value string];
+  }
+  
+  NSUInteger matchCount = [regex numberOfMatchesInString:string options:0 range:NSMakeRange(0, [value length])];
+  
+  if (!matchCount && error) {
+    *error = self.validationError;
+  }
+  
+  return matchCount;
 }
 
 - (NSString *)description

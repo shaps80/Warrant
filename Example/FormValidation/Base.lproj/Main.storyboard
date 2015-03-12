@@ -47,7 +47,7 @@
                                                     <connections>
                                                         <action selector="textFieldDidChange:" destination="pGg-6v-bdr" eventType="editingChanged" id="mz4-zH-3ZT"/>
                                                         <action selector="textFieldDidEndEditing:" destination="pGg-6v-bdr" eventType="editingDidEnd" id="cVB-VF-A8n"/>
-                                                        <outlet property="dataValidator" destination="dzS-v4-RM4" id="8SV-pj-KZQ"/>
+                                                        <outlet property="dataValidator" destination="1Nj-Mp-Uxi" id="0Dy-50-1zQ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -76,7 +76,7 @@
                                                     <connections>
                                                         <action selector="textFieldDidChange:" destination="pGg-6v-bdr" eventType="editingChanged" id="HDl-h6-nUE"/>
                                                         <action selector="textFieldDidEndEditing:" destination="pGg-6v-bdr" eventType="editingDidEnd" id="CFD-u0-pQC"/>
-                                                        <outlet property="dataValidator" destination="OJt-Cn-0nt" id="G4C-5w-aQM"/>
+                                                        <outlet property="dataValidator" destination="9x0-f1-30D" id="CSg-TV-aVk"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -104,25 +104,13 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
-                <customObject id="dzS-v4-RM4" userLabel="Compound Email Validator" customClass="SPXCompoundDataValidator">
-                    <connections>
-                        <outletCollection property="validators" destination="1Nj-Mp-Uxi" id="8Xm-5g-wU5"/>
-                        <outletCollection property="validators" destination="qEp-xN-5Ff" id="ZRD-kN-1SU"/>
-                    </connections>
-                </customObject>
-                <customObject id="OJt-Cn-0nt" userLabel="Compound Password Validator" customClass="SPXCompoundDataValidator">
-                    <connections>
-                        <outletCollection property="validators" destination="9x0-f1-30D" id="LnZ-FQ-mb3"/>
-                        <outletCollection property="validators" destination="qEp-xN-5Ff" id="x1n-OO-2gl"/>
-                    </connections>
-                </customObject>
                 <customObject id="1Nj-Mp-Uxi" userLabel="Email Validator" customClass="SPXEmailDataValidator"/>
                 <customObject id="9x0-f1-30D" userLabel="Password Validator" customClass="SPXRegexDataValidator">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="invalidErrorString" value="Invalid password"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="regexPattern" value="^(?=.*\d)(?=.*[A-Za-z]).{6,32}$"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
-                <customObject id="qEp-xN-5Ff" customClass="SPXNonEmptyDataValidator"/>
                 <customObject id="VET-13-joH" customClass="SPXFormValidator">
                     <connections>
                         <outletCollection property="fields" destination="ARP-Eb-rQx" id="mAK-7v-8Jt"/>
@@ -160,7 +148,7 @@
                                                     <connections>
                                                         <action selector="textFieldDidChange:" destination="1vr-xD-K1t" eventType="editingChanged" id="tF8-tv-gym"/>
                                                         <action selector="textFieldDidEndEditing:" destination="1vr-xD-K1t" eventType="editingDidEnd" id="IZJ-Vf-NOt"/>
-                                                        <outlet property="dataValidator" destination="7J7-ce-XSl" id="h4t-dU-5eK"/>
+                                                        <outlet property="dataValidator" destination="Gwn-zb-fUK" id="ggW-ej-2Ih"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -189,7 +177,7 @@
                                                     <connections>
                                                         <action selector="textFieldDidChange:" destination="1vr-xD-K1t" eventType="editingChanged" id="IwU-zY-Uld"/>
                                                         <action selector="textFieldDidEndEditing:" destination="1vr-xD-K1t" eventType="editingDidEnd" id="Dnd-SB-ihB"/>
-                                                        <outlet property="dataValidator" destination="dln-2H-1DT" id="1KU-ad-wRg"/>
+                                                        <outlet property="dataValidator" destination="3qK-sV-GQ7" id="c57-hd-Rai"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -218,7 +206,7 @@
                                                     <connections>
                                                         <action selector="textFieldDidChange:" destination="1vr-xD-K1t" eventType="editingChanged" id="4Ce-7b-67s"/>
                                                         <action selector="textFieldDidEndEditing:" destination="1vr-xD-K1t" eventType="editingDidEnd" id="f6O-9b-kEz"/>
-                                                        <outlet property="dataValidator" destination="dln-2H-1DT" id="zHg-Cd-hrm"/>
+                                                        <outlet property="dataValidator" destination="3qK-sV-GQ7" id="9A7-ck-t2h"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -246,35 +234,17 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jv-si-I0W" sceneMemberID="firstResponder"/>
-                <customObject id="7J7-ce-XSl" userLabel="Compound Email Validator" customClass="SPXCompoundDataValidator">
-                    <connections>
-                        <outletCollection property="validators" destination="Gwn-zb-fUK" id="FdL-Hh-cYg"/>
-                        <outletCollection property="validators" destination="bL2-IA-Lf9" id="rid-gu-PQo"/>
-                    </connections>
-                </customObject>
-                <customObject id="dln-2H-1DT" userLabel="Compound Password Validator" customClass="SPXCompoundDataValidator">
-                    <connections>
-                        <outletCollection property="validators" destination="bL2-IA-Lf9" id="B3j-g8-jEg"/>
-                        <outletCollection property="validators" destination="3qK-sV-GQ7" id="Led-si-3Ct"/>
-                    </connections>
-                </customObject>
                 <customObject id="Gwn-zb-fUK" userLabel="Email Validator" customClass="SPXEmailDataValidator"/>
                 <customObject id="3qK-sV-GQ7" userLabel="Password Validator" customClass="SPXRegexDataValidator">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="invalidErrorString" value="Invalid password"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="regexPattern" value="^(?=.*\d)(?=.*[A-Za-z]).{6,32}$"/>
                     </userDefinedRuntimeAttributes>
-                </customObject>
-                <customObject id="bL2-IA-Lf9" customClass="SPXNonEmptyDataValidator"/>
-                <customObject id="jww-Jv-GvM" customClass="SPXPasswordValidationField">
-                    <connections>
-                        <outlet property="confirmationField" destination="7uF-yQ-FfH" id="wyF-gG-dIv"/>
-                        <outlet property="passwordField" destination="HnU-d9-hJ9" id="BHy-Tw-B27"/>
-                    </connections>
                 </customObject>
                 <customObject id="g9q-ny-whC" customClass="SPXFormValidator">
                     <connections>
-                        <outletCollection property="fields" destination="jww-Jv-GvM" id="fqy-az-Rlj"/>
                         <outletCollection property="fields" destination="UNo-Zh-L10" id="4at-7b-jhb"/>
+                        <outletCollection property="fields" destination="HnU-d9-hJ9" id="leZ-eM-rMF"/>
                     </connections>
                 </customObject>
             </objects>

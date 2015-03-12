@@ -14,10 +14,10 @@
 
 @implementation SPXFormValidator
 
-+ (BOOL)validateFields:(NSArray *)fields
++ (BOOL)validateFields:(NSArray *)fields error:(NSError *__autoreleasing *)error
 {
   for (id <SPXDataField> field in fields) {
-    if (![field validateWithError:nil]) {
+    if (![field validateWithError:error]) {
       return NO;
     }
   }
@@ -50,13 +50,7 @@
 
 - (BOOL)isValid:(NSError *__autoreleasing *)error
 {
-  for (id <SPXDataField> field in self.fields) {
-    if (![field validateWithError:error]) {
-      return NO;
-    }
-  }
-  
-  return YES;
+  return [self.class validateFields:self.fields error:error];
 }
 
 @end

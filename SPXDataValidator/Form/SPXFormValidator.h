@@ -22,7 +22,7 @@
 /**
  *  Validates an array of fields, an entire form
  */
-+ (BOOL)validateFields:(NSArray *)fields;
++ (BOOL)validateFields:(NSArray *)fields error:(NSError * __autoreleasing *)error;
 
 
 /**

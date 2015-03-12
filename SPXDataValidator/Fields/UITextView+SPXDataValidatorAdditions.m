@@ -16,6 +16,18 @@
 
 @implementation UITextView (SPXDataValidatorAdditions)
 
+- (void)setDependentFields:(NSArray *)dependentFields
+{
+  @synchronized(self) {
+    objc_setAssociatedObject(self, @selector(dependentFields), dependentFields, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  }
+}
+
+- (NSArray *)dependentFields
+{
+  return objc_getAssociatedObject(self, @selector(dependentFields));
+}
+
 - (void)setDataValidator:(id<SPXDataValidator>)validator
 {
   @synchronized(self) {

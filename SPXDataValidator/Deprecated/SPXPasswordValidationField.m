@@ -16,6 +16,16 @@
 
 @implementation SPXPasswordValidationField
 
+- (void)setDependentFields:(NSArray *)dependentFields
+{
+  // do nothing 
+}
+
+- (NSArray *)dependentFields
+{
+  return nil;
+}
+
 - (NSString *)text
 {
   return [self validateWithError:nil] ? [self.passwordField text] : nil;

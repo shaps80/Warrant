@@ -10,7 +10,7 @@
 #import "SPXFormValidator.h"
 #import "UITextField+SPXDataValidatorAdditions.h"
 
-@interface SignInViewController () <UITextFieldDelegate>
+@interface SignInViewController ()
 @property (nonatomic, strong) IBOutlet SPXFormValidator *formValidator;
 @end
 

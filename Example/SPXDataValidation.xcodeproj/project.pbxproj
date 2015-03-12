@@ -11,7 +11,6 @@
 		45E304E8253BC85F2B16C2D2 /* libPods-FormValidationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8983BE5B1F7C7E6F86C7DC /* libPods-FormValidationTests.a */; };
 		54076D371A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54076D361A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m */; };
 		5420DE861A1A7EC9001D5480 /* SPXFormValidatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420DE841A1A7EC9001D5480 /* SPXFormValidatorSpec.m */; };
-		5420DE971A1A8093001D5480 /* SPXPasswordValidationFieldSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5420DE951A1A8093001D5480 /* SPXPasswordValidationFieldSpec.m */; };
 		547D6C2C1A1908A80052B750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2B1A1908A80052B750 /* main.m */; };
 		547D6C2F1A1908A80052B750 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C2E1A1908A80052B750 /* AppDelegate.m */; };
 		547D6C321A1908A80052B750 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547D6C311A1908A80052B750 /* SignInViewController.m */; };
@@ -47,9 +46,6 @@
 		5420DE8A1A1A7F77001D5480 /* UITextView+SPXDataValidatorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+SPXDataValidatorAdditions.h"; sourceTree = "<group>"; };
 		5420DE8B1A1A7F77001D5480 /* UITextView+SPXDataValidatorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+SPXDataValidatorAdditions.m"; sourceTree = "<group>"; };
 		5420DE901A1A7F8A001D5480 /* SPXDataField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPXDataField.h; sourceTree = "<group>"; };
-		5420DE911A1A7FB9001D5480 /* SPXPasswordValidationField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXPasswordValidationField.h; sourceTree = "<group>"; };
-		5420DE921A1A7FB9001D5480 /* SPXPasswordValidationField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordValidationField.m; sourceTree = "<group>"; };
-		5420DE951A1A8093001D5480 /* SPXPasswordValidationFieldSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordValidationFieldSpec.m; sourceTree = "<group>"; };
 		547D6C261A1908A80052B750 /* SPXDataValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPXDataValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547D6C2A1A1908A80052B750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		547D6C2B1A1908A80052B750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +69,8 @@
 		54AD21C01A1A582A00C8C71A /* SPXRegexDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXRegexDataValidator.h; sourceTree = "<group>"; };
 		54AD21C11A1A582A00C8C71A /* SPXRegexDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXRegexDataValidator.m; sourceTree = "<group>"; };
 		54B3379D1AB1DC380020F49F /* SPXDataValidators.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SPXDataValidators.podspec; path = ../../SPXDataValidators.podspec; sourceTree = "<group>"; };
+		54B3379F1AB200B10020F49F /* SPXPasswordValidationField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPXPasswordValidationField.h; sourceTree = "<group>"; };
+		54B337A01AB200B10020F49F /* SPXPasswordValidationField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordValidationField.m; sourceTree = "<group>"; };
 		54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXPasswordDataValidatorSpec.m; sourceTree = "<group>"; };
 		54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXCompoundDataValidatorSpec.m; sourceTree = "<group>"; };
 		5979EA26C84884F966139C99 /* Pods-SPXDataValidation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPXDataValidation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPXDataValidation/Pods-SPXDataValidation.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				5420DE901A1A7F8A001D5480 /* SPXDataField.h */,
-				5420DE911A1A7FB9001D5480 /* SPXPasswordValidationField.h */,
-				5420DE921A1A7FB9001D5480 /* SPXPasswordValidationField.m */,
 				5420DE881A1A7F77001D5480 /* UITextField+SPXDataValidatorAdditions.h */,
 				5420DE891A1A7F77001D5480 /* UITextField+SPXDataValidatorAdditions.m */,
 				5420DE8A1A1A7F77001D5480 /* UITextView+SPXDataValidatorAdditions.h */,
@@ -193,7 +189,6 @@
 				54FE63581A19792200CE278C /* SPXPasswordDataValidatorSpec.m */,
 				54076D361A1980C900F50CA4 /* SPXNonEmptyDataValidatorSpec.m */,
 				54FE635D1A19794E00CE278C /* SPXCompoundDataValidatorSpec.m */,
-				5420DE951A1A8093001D5480 /* SPXPasswordValidationFieldSpec.m */,
 				5420DE841A1A7EC9001D5480 /* SPXFormValidatorSpec.m */,
 			);
 			name = Tests;
@@ -228,6 +223,7 @@
 				5420DE7E1A1A7CF4001D5480 /* Form */,
 				547D6CAE1A196CF70052B750 /* Validators */,
 				5420DE871A1A7F77001D5480 /* Fields */,
+				54B3379E1AB2008F0020F49F /* Deprecated */,
 			);
 			name = SPXDataValidator;
 			path = ../SPXDataValidator;
@@ -244,6 +240,15 @@
 				547D6CB41A196CF70052B750 /* SPXNonEmptyDataValidator.m */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		54B3379E1AB2008F0020F49F /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				54B3379F1AB200B10020F49F /* SPXPasswordValidationField.h */,
+				54B337A01AB200B10020F49F /* SPXPasswordValidationField.m */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 		8710C4B05230FB2280F62BB4 /* Frameworks */ = {
@@ -445,7 +450,6 @@
 				54FE635A1A19792600CE278C /* SPXPasswordDataValidatorSpec.m in Sources */,
 				547D6CCA1A196D940052B750 /* SPXEmailDataValidatorSpec.m in Sources */,
 				5420DE861A1A7EC9001D5480 /* SPXFormValidatorSpec.m in Sources */,
-				5420DE971A1A8093001D5480 /* SPXPasswordValidationFieldSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,13 +48,13 @@ describe(@"SPXFormValidator", ^{
   passwordField.dataValidator = passwordValidator;
 
   it(@"should pass if all validators are valid", ^{
-    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ]];
+    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ] error:nil];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
   
   it(@"should fail if at least one validator is invalid", ^{
     passwordField.text = @"password";
-    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ]];
+    BOOL isValid = [SPXFormValidator validateFields:@[ emailField, passwordField ] error:nil];
     [[theValue(isValid) should] equal:theValue(NO)];
   });
   

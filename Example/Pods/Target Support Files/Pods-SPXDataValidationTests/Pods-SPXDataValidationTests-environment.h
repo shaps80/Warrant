@@ -15,8 +15,8 @@
 // SPXDataValidators
 #define COCOAPODS_POD_AVAILABLE_SPXDataValidators
 #define COCOAPODS_VERSION_MAJOR_SPXDataValidators 1
-#define COCOAPODS_VERSION_MINOR_SPXDataValidators 3
-#define COCOAPODS_VERSION_PATCH_SPXDataValidators 1
+#define COCOAPODS_VERSION_MINOR_SPXDataValidators 4
+#define COCOAPODS_VERSION_PATCH_SPXDataValidators 0
 
 // SPXDefines
 #define COCOAPODS_POD_AVAILABLE_SPXDefines

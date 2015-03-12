@@ -20,6 +20,12 @@
 
 
 /**
+ *  You can provide dependent fields that must be validated in order for this field to validate -- useful in password confirmations
+ */
+@property (nonatomic, strong) IBOutletCollection(NSObject /* id<SPXDataField> */) NSArray *dependentFields;
+
+
+/**
  *  Validates the current value of this view
  *
  *  @param error A pointer to an NSError object (optional)
