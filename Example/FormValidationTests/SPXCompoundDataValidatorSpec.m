@@ -40,14 +40,14 @@ describe(@"SPXCompoundDataValidator", ^{
   SPXNonEmptyDataValidator *nonEmptyValidator = [SPXNonEmptyDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emailValidator, nonEmptyValidator, nil];
-  SPXCompoundDataValidator *validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+  SPXCompoundDataValidator *validator = [SPXCompoundDataValidator validatorWithValidators:validators validationRule:SPXCompoundDataValidationRuleAll];
 
   it(@"should pass when all validator pass", ^{
     BOOL isValid = [validator validateValue:validEmail error:nil];
     [[theValue(isValid) should] equal:theValue(YES)];
   });
   
-  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAny];
+  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationRule:SPXCompoundDataValidationRuleAny];
   
   it(@"should pass when 1 validator passes", ^{
     BOOL isValid = [validator validateValue:invalidEmail error:nil];
@@ -55,7 +55,7 @@ describe(@"SPXCompoundDataValidator", ^{
   });
   
   
-  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+  validator = [SPXCompoundDataValidator validatorWithValidators:validators validationRule:SPXCompoundDataValidationRuleAll];
   
   it(@"should fail if 1 validator fails", ^{
     BOOL isValid = [validator validateValue:invalidEmail error:nil];

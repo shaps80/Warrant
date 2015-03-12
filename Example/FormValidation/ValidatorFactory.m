@@ -25,7 +25,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   SPXRegexDataValidator *emailValidator = [SPXEmailDataValidator new];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];
-  return [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+  return [SPXCompoundDataValidator validatorWithValidators:validators validationRule:SPXCompoundDataValidationRuleAll];
 }
 
 + (SPXCompoundDataValidator *)passwordValidator
@@ -34,7 +34,7 @@ static NSString * const PasswordRegex = @"^(?=.*\\d)(?=.*[A-Za-z]).{6,32}$";
   SPXRegexDataValidator *passwordValidator = [SPXRegexDataValidator validatorWithExpression:PasswordRegex];
   
   NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, passwordValidator, nil];
-  return [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
+  return [SPXCompoundDataValidator validatorWithValidators:validators validationRule:SPXCompoundDataValidationRuleAll];
 }
 
 @end

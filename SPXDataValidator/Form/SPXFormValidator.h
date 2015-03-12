@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "SPXDataField.h"
+#import "SPXDefines.h"
 
 
 /**
@@ -27,7 +28,17 @@
 /**
  *  Validates a single field
  */
-+ (BOOL)validateField:(id <SPXDataField>)field;
++ (BOOL)validateField:(id <SPXDataField>)field SPX_DEPRECATED("Use -validateWithError: on your id<SPXDataField> instance");
+
+
+/**
+ *  Validates all associated fields. (Defaults to YES when no fields exist)
+ *
+ *  @param error If validation fails, use this to get a reference to the first generated error
+ *
+ *  @return YES if all fields are valid, NO otherwise
+ */
+- (BOOL)isValid:(NSError * __autoreleasing *)error;
 
 
 @end

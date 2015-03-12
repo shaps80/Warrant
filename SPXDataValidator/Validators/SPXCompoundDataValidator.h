@@ -13,16 +13,16 @@
 /**
  *  Defines options for compound data validators
  */
-typedef NS_ENUM(NSInteger, SPXCompoundDataValidationType)
+typedef NS_ENUM(NSInteger, SPXCompoundDataValidationRule)
 {
   /**
    *  Specifies that all validators must be valid in order for this compound validator to be valid
    */
-  SPXCompoundDataValidatorValidateAll,
+  SPXCompoundDataValidationRuleAll,
   /**
    *  Specifies that at least one validator must be valid in order for this compound validator to be valid
    */
-  SPXCompoundDataValidatorValidateAny
+  SPXCompoundDataValidationRuleAny
 };
 
 
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, SPXCompoundDataValidationType)
  *
  *  @return A new compound validator instance
  */
-+ (instancetype)validatorWithValidators:(NSOrderedSet *)validators validationType:(SPXCompoundDataValidationType)type;
++ (instancetype)validatorWithValidators:(NSOrderedSet *)validators validationRule:(SPXCompoundDataValidationRule)rule;
 
 
 @end

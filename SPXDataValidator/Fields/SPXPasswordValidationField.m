@@ -10,11 +10,16 @@
 #import "SPXPasswordValidationField.h"
 
 @interface SPXPasswordValidationField ()
-@property (nonatomic, strong) UITextField *passwordField;
-@property (nonatomic, strong) UITextField *confirmationField;
+@property (nonatomic, strong) IBOutlet id<SPXDataField> passwordField;
+@property (nonatomic, strong) IBOutlet id<SPXDataField> confirmationField;
 @end
 
 @implementation SPXPasswordValidationField
+
+- (NSString *)text
+{
+  return [self validateWithError:nil] ? [self.passwordField text] : nil;
+}
 
 - (void)setDataValidator:(id<SPXDataValidator>)validator
 {
@@ -28,7 +33,7 @@
   return objc_getAssociatedObject(self, @selector(dataValidator));
 }
 
-+ (instancetype)fieldForPasswordField:(UITextField *)passwordField confirmationField:(UITextField *)confirmationField
++ (instancetype)fieldForPasswordField:(id<SPXDataField>)passwordField confirmationField:(id<SPXDataField>)confirmationField
 {
   SPXPasswordValidationField *field = [SPXPasswordValidationField new];
   field.passwordField = passwordField;

@@ -29,4 +29,10 @@
 - (BOOL)validateWithError:(out NSError * __autoreleasing *)error;
 
 
+/**
+ *  Gets the text for this field
+ */
+- (NSString *)text;
+
+
 @end

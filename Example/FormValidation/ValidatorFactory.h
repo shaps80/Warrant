@@ -10,6 +10,8 @@
 #import "SPXDataField.h"
 #import "SPXCompoundDataValidator.h"
 
+#define __SPXDataValidators_1_0_0
+
 
 /**
  *  A convenience factory for returning project-specific validators

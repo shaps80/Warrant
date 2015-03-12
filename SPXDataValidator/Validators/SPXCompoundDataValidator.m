@@ -7,39 +7,56 @@
 //
 
 #import "SPXCompoundDataValidator.h"
+#import "SPXDefines.h"
 
 @interface SPXCompoundDataValidator ()
 
-@property (nonatomic, strong) NSArray *validators;
-@property (nonatomic, assign) SPXCompoundDataValidationType validationType;
+@property (nonatomic, strong) IBOutletCollection(NSObject /* id <SPXDataValidator> */) NSArray *validators;
+@property (nonatomic, assign) SPXCompoundDataValidationRule validationRule;
+@property (nonatomic, assign) IBInspectable BOOL validateAll;
 
 @end
 
 @implementation SPXCompoundDataValidator
 
-+ (instancetype)validatorWithValidators:(NSOrderedSet *)validators validationType:(SPXCompoundDataValidationType)type
++ (instancetype)validatorWithValidators:(NSOrderedSet *)validators validationRule:(SPXCompoundDataValidationRule)rule
 {
   SPXCompoundDataValidator *validator = [SPXCompoundDataValidator new];
   validator.validators = validators.array;
-  validator.validationType = type;
+  validator.validationRule = rule;
   return validator;
+}
+
+- (void)setValidators:(NSArray *)validators
+{
+  for (id <SPXDataValidator> validator in validators) {
+    SPXAssertTrueOrReturn([validator conformsToProtocol:@protocol(SPXDataValidator)]);
+    SPXAssertTrueOrReturn([validator respondsToSelector:@selector(validateValue:error:)]);
+  }
+  
+  _validators = validators;
 }
 
 - (BOOL)validateValue:(id)value error:(out NSError *__autoreleasing *)error
 {
-  BOOL isValid = (self.validationType == SPXCompoundDataValidatorValidateAll) ? YES : NO;
+  BOOL isValid = (self.validationRule == SPXCompoundDataValidationRuleAll) ? YES : NO;
   
   for (id <SPXDataValidator> validator in self.validators) {
-    if (self.validationType == SPXCompoundDataValidatorValidateAny && [validator validateValue:value error:error]) {
+    if (self.validationRule == SPXCompoundDataValidationRuleAny && [validator validateValue:value error:error]) {
       return YES;
     }
     
-    if (![validator validateValue:value error:error] && self.validationType == SPXCompoundDataValidatorValidateAll) {
+    if (![validator validateValue:value error:error] && self.validationRule == SPXCompoundDataValidationRuleAll) {
       return NO;
     }
   }
   
   return isValid;
+}
+
+- (void)setValidateAll:(BOOL)validateAll
+{
+  self.validationRule = (SPXCompoundDataValidationRule)validateAll;
 }
 
 @end
