@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541737891AC5ADB40039DFD8 /* SPXPasswordValidationField.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258141AB20A0F0045058A /* SPXPasswordValidationField.m */; };
+		5417378A1AC5ADB40039DFD8 /* UITextField+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258181AB20A0F0045058A /* UITextField+SPXDataValidatorAdditions.m */; };
+		5417378B1AC5ADB40039DFD8 /* UITextView+SPXDataValidatorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5432581A1AB20A0F0045058A /* UITextView+SPXDataValidatorAdditions.m */; };
+		5417378C1AC5ADB40039DFD8 /* SPXFormValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5432581D1AB20A0F0045058A /* SPXFormValidator.m */; };
+		5417378D1AC5ADB40039DFD8 /* SPXBlockDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258211AB20A0F0045058A /* SPXBlockDataValidator.m */; };
+		5417378E1AC5ADB40039DFD8 /* SPXCompoundDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258231AB20A0F0045058A /* SPXCompoundDataValidator.m */; };
+		5417378F1AC5ADB40039DFD8 /* SPXNonEmptyDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258251AB20A0F0045058A /* SPXNonEmptyDataValidator.m */; };
+		541737901AC5ADB40039DFD8 /* SPXRegexDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258271AB20A0F0045058A /* SPXRegexDataValidator.m */; };
 		5432582C1AB20A430045058A /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 543258291AB20A430045058A /* CreateAccountViewController.m */; };
 		5432582D1AB20A430045058A /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5432582B1AB20A430045058A /* SignInViewController.m */; };
 		5474C3D91AB20CD500AD6388 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5474C3D81AB20CD500AD6388 /* Main_iPhone.storyboard */; };
@@ -462,10 +470,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5417378D1AC5ADB40039DFD8 /* SPXBlockDataValidator.m in Sources */,
+				541737901AC5ADB40039DFD8 /* SPXRegexDataValidator.m in Sources */,
 				5474C3E21AB216D300AD6388 /* SPXFormValidatorSpec.m in Sources */,
 				5474C3E31AB216D300AD6388 /* SPXNonEmptyDataValidatorSpec.m in Sources */,
+				5417378E1AC5ADB40039DFD8 /* SPXCompoundDataValidator.m in Sources */,
+				541737891AC5ADB40039DFD8 /* SPXPasswordValidationField.m in Sources */,
 				5474C3E11AB216D300AD6388 /* SPXEmailDataValidatorSpec.m in Sources */,
+				5417378F1AC5ADB40039DFD8 /* SPXNonEmptyDataValidator.m in Sources */,
+				5417378B1AC5ADB40039DFD8 /* UITextView+SPXDataValidatorAdditions.m in Sources */,
+				5417378A1AC5ADB40039DFD8 /* UITextField+SPXDataValidatorAdditions.m in Sources */,
 				5474C3E41AB216D300AD6388 /* SPXPasswordDataValidatorSpec.m in Sources */,
+				5417378C1AC5ADB40039DFD8 /* SPXFormValidator.m in Sources */,
 				5474C3E01AB216D300AD6388 /* SPXCompoundDataValidatorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

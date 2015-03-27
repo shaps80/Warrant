@@ -1,6 +1,6 @@
 language: objective-c
-xcode_workspace: Example/FormValidation.xcworkspace
-xcode_scheme: FormValidation
+xcode_workspace: Example/SPXDataValidators.xcworkspace
+xcode_scheme: SPXDataValidators
 xcode_sdk: iphonesimulator8.1
 
 before_install: 
