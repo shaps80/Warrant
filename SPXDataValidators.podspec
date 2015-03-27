@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
   s.dependency 'SPXDefines'
-  s.source_files = 'SPXDataValidators/**/*.{h,m}'
+  s.source_files = 'Pod/Classes/**/*.{h,m}'
 end
