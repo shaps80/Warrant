@@ -7,3 +7,6 @@ before_install:
 - brew update
 - brew unlink xctool
 - brew install xctool
+- rm -rf Example/Pods
+- rm -rf Podfile.lock
+- pod install
