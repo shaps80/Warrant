@@ -32,7 +32,7 @@
 #define _SPX_OBJC_STRINGIFY(x) @#x
 #define _SPX_STRINGIFY(x) #x
 
-#define _SPXCompileTimeCheck(code_, action_) (((void)(NO && ((void)code_, NO)), action_))
+#define _SPXCompileTimeCheck(condition_, action_) (((void)(NO && ((void)condition_, NO)), action_))
 
 
 /**

@@ -29,16 +29,11 @@
 
 #import "SPXEncodingInternals.h"
 
-
 #define SPXEncode(keyPath) _SPXEncodeE(aCoder, keyPath)
 #define SPXEncodeE(encoder, keyPath) _SPXEncodeE(encoder, keyPath)
 
 #define SPXDecode(keyPath) _SPXDecodeE(aDecoder, keyPath)
 #define SPXDecodeE(decoder, keyPath) _SPXDecodeE(decoder, keyPath)
-
-
-#define SPXCoder(keyPath) _SPXCoder(keyPath)
-
 
 #endif
 

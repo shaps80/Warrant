@@ -30,13 +30,21 @@
 #import "SPXDefinesCommon.h"
 
 
-#define _SPXEncodeE(encoder_, keyPath_) _SPXCompileTimeCheck(self.keyPath_, \
-  [encoder_ encodeObject:[self valueForKey:_SPX_OBJC_STRINGIFY(keyPath_)] forKey:_SPX_OBJC_STRINGIFY(keyPath_)] \
-)
+#define _SPXEncodeE(encoder_, keyPath_) do { NSAssert((self.keyPath_), @"keyPath doesn't exist for class"); \
+  [encoder_ encodeObject:[self valueForKey:_SPX_OBJC_STRINGIFY(keyPath_)] forKey:_SPX_OBJC_STRINGIFY(keyPath_)]; \
+} while(0)
 
-#define _SPXDecodeE(decoder_, keyPath_) _SPXCompileTimeCheck(self.keyPath_, \
-  [self setValue:[decoder_ decodeObjectForKey:_SPX_OBJC_STRINGIFY(keyPath_)] forKey:_SPX_OBJC_STRINGIFY(keyPath_)] \
-)
+#define KZBoxT(target, mapping, property) ({if(NO){[target property];} \
+ [KZPropertyDescriptor descriptorWithPropertyName:@#property andMapping:@#mapping]; \
+})
+
+#define _SPXDecodeE(decoder_, keyPath_) if (NO) { if (self.keyPath_) {} }; do { \
+  if ([self.class respondsToSelector:@selector(supportsSecureCoding)] && [self.class performSelector:@selector(supportsSecureCoding)]) { \
+    [self setValue:[decoder_ decodeObjectOfClass:self.class forKey:_SPX_OBJC_STRINGIFY(keyPath_)] forKey:_SPX_OBJC_STRINGIFY(keyPath_)]; \
+  } else { \
+    [self setValue:[decoder_ decodeObjectForKey:_SPX_OBJC_STRINGIFY(keyPath_)] forKey:_SPX_OBJC_STRINGIFY(keyPath_)]; \
+  } \
+} while(0)
 
 
 #endif
