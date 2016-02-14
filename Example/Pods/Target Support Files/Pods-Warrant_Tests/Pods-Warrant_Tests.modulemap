@@ -1,0 +1,6 @@
+framework module Pods_Warrant_Tests {
+  umbrella header "Pods-Warrant_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

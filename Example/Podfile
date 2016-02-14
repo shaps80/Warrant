@@ -1,11 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
-target 'SPXDataValidators', :exclusive => true do
-  pod "SPXDataValidators", :path => "../"
+target 'Warrant_Example', :exclusive => true do
+  pod 'Warrant', :path => '../'
 end
 
-target 'Tests', :exclusive => true do
-  pod "SPXDataValidators", :path => "../"
+target 'Warrant_Tests', :exclusive => true do
+  pod 'Warrant', :path => '../'
 
-  pod 'Kiwi'
+  
 end
