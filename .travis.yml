@@ -1,10 +1,12 @@
-language: objective-c
-xcode_workspace: Example/SPXDataValidators.xcworkspace
-xcode_scheme: SPXDataValidators-Example
-xcode_sdk: iphonesimulator8.1
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
 
-before_install: 
-- brew update
-- brew unlink xctool
-- brew install xctool
-- pod install --project-directory=Example
+language: objective-c
+osx_image: xcode7.2
+xcode_workspace: Example/Warrant.xcworkspace
+xcode_scheme: Warrant-Example
+xcode_sdk: iphonesimulator9.2
+podfile: Example/Podfile
+
+

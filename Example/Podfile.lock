@@ -1,5 +1,5 @@
 PODS:
-  - Warrant (0.1.0)
+  - Warrant (2.0)
 
 DEPENDENCIES:
   - Warrant (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Warrant: 66fc577a298d42eb9d32569ab9661ee4316151bc
+  Warrant: 5026e34fb3f2fa54672389e0e62a9589609f06b4
 
 COCOAPODS: 0.39.0

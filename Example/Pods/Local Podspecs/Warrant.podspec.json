@@ -1,25 +1,20 @@
 {
   "name": "Warrant",
-  "version": "0.1.0",
-  "summary": "A short description of Warrant.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Warrant",
+  "version": "2.0",
+  "summary": "Form and data validators done right!",
+  "homepage": "https://github.com/shaps80/Warrant",
   "license": "MIT",
   "authors": {
-    "Shaps": "shapsuk@me.com"
+    "Shaps Mohsenin": "shapsuk@me.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Warrant.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/shaps80/Warrant.git",
+    "tag": "2.0"
   },
+  "social_media_url": "https://twitter.com/shaps",
   "platforms": {
-    "ios": "8.0"
+    "ios": "7.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "Warrant": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "source_files": "Pod/Classes/**/*.swift"
 }
