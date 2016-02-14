@@ -1,11 +1,11 @@
 <img src="assets/logo.png" width="128">
 
-# Data Validators
+# Warrant
 
-[![CI Status](http://img.shields.io/travis/shaps80/SPXDataValidators.svg?style=flat)](https://travis-ci.org/Shaps Mohsenin/SPXDataValidators)
-[![Version](https://img.shields.io/cocoapods/v/SPXDataValidators.svg?style=flat)](http://cocoadocs.org/docsets/SPXDataValidators)
-[![License](https://img.shields.io/cocoapods/l/SPXDataValidators.svg?style=flat)](http://cocoadocs.org/docsets/SPXDataValidators)
-[![Platform](https://img.shields.io/cocoapods/p/SPXDataValidators.svg?style=flat)](http://cocoadocs.org/docsets/SPXDataValidators)
+[![CI Status](http://img.shields.io/travis/shaps80/Warrant.svg?style=flat)](https://travis-ci.org/shaps80/Warrant)
+[![Version](https://img.shields.io/cocoapods/v/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrant)
+[![License](https://img.shields.io/cocoapods/l/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrany)
+[![Platform](https://img.shields.io/cocoapods/p/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrant)
 
 ## Updates
 
