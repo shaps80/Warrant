@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'Warrant_Example', :exclusive => true do
   pod 'Warrant', :path => '../'
-  pod 'SPXControls'
 end
 
 target 'Warrant_Tests', :exclusive => true do
