@@ -18,7 +18,7 @@
 	- Validators can even be re-used in IB across multiple fields
 * New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
 
-<img src="Screenshots/IB.png" width="720" height="160" />
+<img src="assets/IB.png" width="720" height="160" />
 
 >These validators work exceptionally well alongside another open-source project I released [SPXControls](https://github.com/shaps80/SPXControls)
 
