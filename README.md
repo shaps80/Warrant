@@ -1,4 +1,4 @@
-<img src="assets/logo.png" width="64">
+<img src="assets/logo.png" width="128">
 
 # Data Validators
 
