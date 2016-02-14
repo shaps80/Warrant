@@ -1,3 +1,5 @@
+<img src="assets/logo.png">
+
 # Data Validators
 
 [![CI Status](http://img.shields.io/travis/shaps80/SPXDataValidators.svg?style=flat)](https://travis-ci.org/Shaps Mohsenin/SPXDataValidators)

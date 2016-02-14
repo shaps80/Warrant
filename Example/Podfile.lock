@@ -1,0 +1,20 @@
+PODS:
+  - Kiwi (2.3.1)
+  - SPXDataValidators (1.4.0):
+    - SPXDefines
+  - SPXDefines (1.2.2)
+
+DEPENDENCIES:
+  - Kiwi
+  - SPXDataValidators (from `../`)
+
+EXTERNAL SOURCES:
+  SPXDataValidators:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  SPXDataValidators: 67b9c21d91964de42bf2e4dc63d96c99dc3dcf9c
+  SPXDefines: 3d7efe9602382912c3423e1707c271c284677ed2
+
+COCOAPODS: 0.36.4
