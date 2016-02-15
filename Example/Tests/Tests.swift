@@ -27,27 +27,31 @@ import UIKit
 import XCTest
 import Warrant
 
-class Tests: XCTestCase {
-  
-  override func setUp() {
-    super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+extension NSError {
+  convenience init(message: String?) {
+    self.init(domain: "validation.error", code: -1, userInfo: [ NSLocalizedDescriptionKey: message ?? "Invalid value" ])
   }
-  
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
+}
+
+func XCTAssertThrows<T: ErrorType where T: Equatable>(error: T, block: () throws -> ()) {
+  do {
+    try block()
   }
+  catch let e as T {
+    XCTAssertEqual(e, error)
+  }
+  catch {
+    XCTFail("Wrong error")
+  }
+}
+
+class NonEmptyValidatorTests: XCTestCase {
   
   func testExample() {
     // This is an example of a functional test case.
-    XCTAssert(true, "Pass")
-  }
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measureBlock() {
-      // Put the code you want to measure the time of here.
+    XCTAssertThrows(NSError(message: "The value is empty")) { () -> () in
+      let validator = NonEmptyValidator()
+      try validator.validate("")
     }
   }
   

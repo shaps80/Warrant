@@ -32,6 +32,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    validate()
   }
   
   func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

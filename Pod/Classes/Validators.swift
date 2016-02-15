@@ -75,6 +75,8 @@ public final class NonEmptyValidator: Validator {
         }
       }
     }
+    
+    throw NSError(message: errorMessage)
   }
   
 }
@@ -84,6 +86,8 @@ public class RegexValidator: Validator {
   
   /// The regex pattern to match
   @IBInspectable public var regexPattern: String?
+  
+  override init() { }
   
   public init(regexPattern: String) {
     super.init()
@@ -121,7 +125,7 @@ public final class EmailValidator: RegexValidator {
    
    - returns: A newly configured email validator
    */
-  public init() {
+  public override init() {
     let pattern =
       "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}" +
       "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\" +
