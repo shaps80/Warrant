@@ -118,13 +118,11 @@ it, simply add the following line to your Podfile:
 
 If you have ideas for really useful, reusable validators, please create a pull request and I'll include them.
 
-When designing your validators remember these basic rules:
-
 ## Author
 
 Shaps Mohsenin, [@shaps](http://twitter.com/shaps)
 
 ## License
 
-SPXDataValidators is available under the MIT license. See the LICENSE file for more info.
+Warrant is available under the MIT license. See the LICENSE file for more info.
 
