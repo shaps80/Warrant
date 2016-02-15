@@ -8,5 +8,3 @@ xcode_workspace: Example/Warrant.xcworkspace
 xcode_scheme: Warrant-Example
 xcode_sdk: iphonesimulator9.2
 podfile: Example/Podfile
-
-

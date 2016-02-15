@@ -21,7 +21,7 @@ Warrant makes data validation better by following best practices:
 * Reusability
 
 ## Validators
-
+ 
 Warrant provides four validators by default:
 
 * RegexValidator
