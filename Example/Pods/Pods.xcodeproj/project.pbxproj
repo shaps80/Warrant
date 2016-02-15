@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E9D7A9CAB9C6A971865917CA5072241 /* Warrant-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB305AFF5E11F06EA19804AA5B011A /* Warrant-dummy.m */; };
+		0472E597E91B8308C3F308E816BF1D61 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0C2A5712381FBB078F2B2DE7F050D /* Types.swift */; };
 		2324595BF548E55915185ABB03851A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		3267C6C156689B0F1DF411900F70A23A /* Warrant-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EF86DC1D33E917F4A02FE11F9711798D /* Warrant-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3275F3455D5E16BA993477602E1C6736 /* Warrant-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB305AFF5E11F06EA19804AA5B011A /* Warrant-dummy.m */; };
 		37ECB34EBF0729CD94810FC90923247D /* Pods-Warrant_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BBA104E0A6557EDBFD082FADDF49B26 /* Pods-Warrant_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B1C3D61CE59197E6C15FF27D1B4B870 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		413940E29FC8DF83779E79201EBA3DB4 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54D0D2519DC63E27841E60A21779269 /* ViewExtensions.swift */; };
 		4F427AA91FDDB76BB3880D4D19396531 /* Pods-Warrant_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 775AB35D2FBDFFD161942FD17805ADB5 /* Pods-Warrant_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6002B6F2BA2C544590878BB2BB04530E /* ViewValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B3A2BD66AA3EC6607BAFE3B1020AAE /* ViewValidators.swift */; };
 		74C459882D9B1BD04535C23FE47AC830 /* Pods-Warrant_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7554C4B6C731F74169D2B0E6E661A /* Pods-Warrant_Tests-dummy.m */; };
-		C06AFC3E4684D8C5FFCD61ED149D4DD7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617FEAFE07C26454E0B946BAE7649C17 /* Validator.swift */; };
+		B28E0C74329B9D8AD653532673F0CF77 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1A4B8755F42558260EC3F29623893 /* Validators.swift */; };
 		D0D9DFBFE3777A49E62F265F25848899 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		DA7D3CEDD7992C70640EC444D361C13D /* Pods-Warrant_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB68B97E77F182DEFA2540BFC4BEE20A /* Pods-Warrant_Example-dummy.m */; };
-		EC99F20FF2FA08AE1663914266BFE1CE /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D51DE6F725A49A7C21D0D0951E4E0CB /* Validators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 		05452E0C3F7F65460E030A5F8FE4112E /* Pods-Warrant_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Warrant_Tests-resources.sh"; sourceTree = "<group>"; };
 		091DD373E2AF561B0ADE8384519ECA64 /* Pods-Warrant_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Warrant_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0B4F8F7739E26ED6314ADFF79A2ED577 /* Pods_Warrant_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Warrant_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DE1A4B8755F42558260EC3F29623893 /* Validators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		10446E22FB20801BFFDE9C1B8BC1B85A /* Pods-Warrant_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Warrant_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1C2BD5F46B0C25348CBC3AAD8F72519B /* Warrant.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Warrant.modulemap; sourceTree = "<group>"; };
 		1FDCF0FD114B6869B8303BB4CD2C4B1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,18 +52,17 @@
 		2A5F2265819555F0798F3B53BC1E3F43 /* Pods-Warrant_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Warrant_Example.modulemap"; sourceTree = "<group>"; };
 		338FA7E24AD5E0EDB1E1E356B7CB7CAA /* Pods-Warrant_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Warrant_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4AF0C2A5712381FBB078F2B2DE7F050D /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		4C8763AE01D7341F14D834001E096FDD /* Pods-Warrant_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Warrant_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		598A773849DCB7F3D740C77C9FCC9876 /* Pods-Warrant_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Warrant_Example-frameworks.sh"; sourceTree = "<group>"; };
-		617FEAFE07C26454E0B946BAE7649C17 /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		618EF87A969C33CEE66FA710B353876D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBA104E0A6557EDBFD082FADDF49B26 /* Pods-Warrant_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Warrant_Example-umbrella.h"; sourceTree = "<group>"; };
-		6D51DE6F725A49A7C21D0D0951E4E0CB /* Validators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		7154B8031357A82846BC5A6EACE18802 /* Warrant.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Warrant.xcconfig; sourceTree = "<group>"; };
 		775AB35D2FBDFFD161942FD17805ADB5 /* Pods-Warrant_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Warrant_Tests-umbrella.h"; sourceTree = "<group>"; };
 		7926C3E71B1CC35AD1952CC172B127D5 /* Warrant-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Warrant-prefix.pch"; sourceTree = "<group>"; };
 		99A7554C4B6C731F74169D2B0E6E661A /* Pods-Warrant_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Warrant_Tests-dummy.m"; sourceTree = "<group>"; };
+		B54D0D2519DC63E27841E60A21779269 /* ViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C3B3A2BD66AA3EC6607BAFE3B1020AAE /* ViewValidators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewValidators.swift; sourceTree = "<group>"; };
 		CB16521841A1E8004BDA30FF39532874 /* Pods-Warrant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Warrant_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CB68B97E77F182DEFA2540BFC4BEE20A /* Pods-Warrant_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Warrant_Example-dummy.m"; sourceTree = "<group>"; };
 		D12F1D942F60DF825EC8E03D225CCEE0 /* Warrant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Warrant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,10 +135,20 @@
 			path = "Example/Pods/Target Support Files/Warrant";
 			sourceTree = "<group>";
 		};
+		2AE2D9FA4D032558FF95D9AFB5DB01ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4AF0C2A5712381FBB078F2B2DE7F050D /* Types.swift */,
+				0DE1A4B8755F42558260EC3F29623893 /* Validators.swift */,
+				B54D0D2519DC63E27841E60A21779269 /* ViewExtensions.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		7A0574559CCE11D663260C73D61C3555 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D22C459B8933849CA4D0E578DC40ECC5 /* Classes */,
+				2AE2D9FA4D032558FF95D9AFB5DB01ED /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -225,16 +235,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D22C459B8933849CA4D0E578DC40ECC5 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				617FEAFE07C26454E0B946BAE7649C17 /* Validator.swift */,
-				6D51DE6F725A49A7C21D0D0951E4E0CB /* Validators.swift */,
-				C3B3A2BD66AA3EC6607BAFE3B1020AAE /* ViewValidators.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -305,7 +305,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6449F4C5197B44954E7D7CE555C18DC3 /* Build configuration list for PBXNativeTarget "Warrant" */;
 			buildPhases = (
-				67D3896764A5A0715F42BA7E37C3BD23 /* Sources */,
+				367C45C65CBF173527C1E9F631A37269 /* Sources */,
 				0715D284C1F24916A1F2CA319009805A /* Frameworks */,
 				3D2BF489F404C9360449943819BA3977 /* Headers */,
 			);
@@ -347,14 +347,14 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		67D3896764A5A0715F42BA7E37C3BD23 /* Sources */ = {
+		367C45C65CBF173527C1E9F631A37269 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06AFC3E4684D8C5FFCD61ED149D4DD7 /* Validator.swift in Sources */,
-				EC99F20FF2FA08AE1663914266BFE1CE /* Validators.swift in Sources */,
-				6002B6F2BA2C544590878BB2BB04530E /* ViewValidators.swift in Sources */,
-				1E9D7A9CAB9C6A971865917CA5072241 /* Warrant-dummy.m in Sources */,
+				0472E597E91B8308C3F308E816BF1D61 /* Types.swift in Sources */,
+				B28E0C74329B9D8AD653532673F0CF77 /* Validators.swift in Sources */,
+				413940E29FC8DF83779E79201EBA3DB4 /* ViewExtensions.swift in Sources */,
+				3275F3455D5E16BA993477602E1C6736 /* Warrant-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -111,8 +111,6 @@ chars: a-z, A-Z, 0-9</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign In" id="gie-y4-UBL"/>
                     <connections>
-                        <outlet property="emailField" destination="Wwh-46-L2F" id="tgE-ca-ZwW"/>
-                        <outlet property="passwordField" destination="oyE-ye-zph" id="m7Q-Un-WVK"/>
                         <outlet property="signInCell" destination="aaW-V6-ZDo" id="UWj-tF-tnV"/>
                     </connections>
                 </tableViewController>

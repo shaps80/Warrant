@@ -33,9 +33,9 @@
 		0C4A052ADAE4ACF175DD336B /* Pods-Warrant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warrant_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Warrant_Tests/Pods-Warrant_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		39CC54A5B3582255DE1201CE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		54C9F23F1C70FA10009CD9CA /* SignInCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInCell.swift; sourceTree = "<group>"; };
-		54C9F2461C711055009CD9CA /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		54C9F2461C711055009CD9CA /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		54C9F2471C711C8A009CD9CA /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
-		54C9F24B1C7139A8009CD9CA /* ViewValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewValidators.swift; sourceTree = "<group>"; };
+		54C9F24B1C7139A8009CD9CA /* ViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Warrant_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warrant_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 		54C9F2431C711044009CD9CA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				54C9F2461C711055009CD9CA /* Validator.swift */,
-				54C9F24B1C7139A8009CD9CA /* ViewValidators.swift */,
+				54C9F2461C711055009CD9CA /* Types.swift */,
+				54C9F24B1C7139A8009CD9CA /* ViewExtensions.swift */,
 				54C9F2471C711C8A009CD9CA /* Validators.swift */,
 			);
 			name = Classes;
