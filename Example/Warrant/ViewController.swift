@@ -13,9 +13,22 @@ class ViewController: UITableViewController, UITextFieldDelegate {
   
   @IBOutlet var signInCell: SignInCell!
   
-  func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-    _ = try? signInCell.validate()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    validate()
+  }
+  
+  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    validate()
     return true
+  }
+  
+  func validate() {
+    do {
+      try signInCell.validate()
+    } catch {
+      print(error)
+    }
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
