@@ -7,140 +7,122 @@
 [![License](https://img.shields.io/cocoapods/l/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrany)
 [![Platform](https://img.shields.io/cocoapods/p/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrant)
 
-## Updates
-
-* Three new validators is now included:
-	* `SPXEmailDataValidator`
-	* `SPXBlockDataValidator`
-	* `SPXRegexDataValidator`
-* New `SPXFormValidator ` for validating multiple fields at once in your user interface
-* Validators can now be added to your `UITextField` and `UITextView` instances from Interface Builder.
-	- Validators can even be re-used in IB across multiple fields
-* New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
-
 <img src="assets/IB.png" width="720" height="160" />
 
->These validators work exceptionally well alongside another open-source project I released [SPXControls](https://github.com/shaps80/SPXControls)
+Data validation made easy. In code and from Interface Builder.
 
-## Validation done right!
+Warrant aims to remove validation from your code, centralize common validation patterns and make your validations more compositable.
 
-Download the example project to see it in action, or checkout the **[presentation](https://github.com/shaps80/SPXDataValidators/blob/master/Data%20Validation%20-%20Presentation.pdf?raw=true)**.
-
->Please note the presentation is a little dated, so subtle changes may be found in actual code. When in doubt, check the code ;)
-
-The approach I've taken makes heavy use of the following best practices:
+Warrant makes data validation better by following best practices:
 
 * Single Responsibility Principle
 * Separation of Concerns
 * Composition
 * Reusability
-* Immutability
 
-I created these validators because I didn't want to use a 3rd party solution that was usually bound to Forms and included additional form building infrastructure I didn't need. I wanted something I could drop-in to my projects more easily, covering more cases (not just UI) and clean up my view controllers.
+## Validators
 
-I couldn't find a decent solution, so I built it myself. Its pretty simple, but very effective. Hope you like it, let me know on [Twitter](http://twitter.com/shaps) ;)
+Warrant provides four validators by default:
 
-## Simple Usage
+* RegexValidator
+* EmailValidator
+* BlockValidator
+* CompoundValidator (using `.All` or `.Any` rules)
 
-In its simplest form you can use a validator as such:
+Validators also use Swift's new error handling features, making it easy to use in code.
 
-``` objc
+## View Validators
 
-SPXRegexDataValidator *validator = [SPXRegexDataValidator emailValidator];
-self.signInButton.enabled = [validator validateValue:email error:nil]
+Warrant also provides validation support for three view types by default:
 
+* UITextField
+* UITextView
+* UITableViewCell
+* UIButton
+
+Warrant also makes use of `@IBInspectable`, giving you access to common configuration options through IB.
+
+See the example app or the screenshot above to learn how you can use this feature.
+
+## Dependencies
+
+Warrant even supports dependant fields. So with zero code, you can configure a view to validate based on its validator in addition to other dependant views. See the example Sign In app to see how this works.
+
+## Extending Warrant
+
+Warrant follows a protocol oriented approach, making it easy to add your own validators.
+
+If you want to create a new validator, you can either comform to the `Validating` protocol or subclass `Validator` (recommended) directly.
+
+If instead you want extend a UIView (or subclass) to support validation, you just need to make it conform to `ViewValidating`. Now you can use it from code or IB and gain all the benefits and power from Warrant.
+	
+* New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
+
+>These validators work exceptionally well alongside another open-source project I released [SPXControls](https://github.com/shaps80/SPXControls)
+
+## Code
+
+If you prefer to setup your validators in code:
+
+``` swift
+let validator = EmailValidator()
+validator.regexPattern = ...
+do {
+  validator.validate(email)
+} catch { print(error) }
 ```
 
-If you're using `<SPXDataField>` instances -- e.g. `UITextField`, `UITextView`, etc...
+If you want to configure a view with depenedencies, you can set that up like so:
 
-```objc
-self.signInButton.enabled = [SPXFormValidator validatorFields:@[ emailField, passwordField ]];
+```swift
+button.dependantViews = [ emailField, passField ]
 ```
 
-Often though you'll want to use UI components for validating user input. I've provided categories for UITextField and UITextView so that they conform to my protocol <SPXDataField> but you can extend your own classes (UI or not) easily enough, and then call something like the following:
-  
-``` objc
+Validation is then as simple as:
 
-NSError *error = nil;
-if (![self.emailField validateWithError:&error]) {
-  // do something useful here
-}
-
+```swift
+do {
+  try button.validate()
+} catch { print(error) }
 ```
 
 ## Compound Validators
 
-``` objc
+What if we want to apply multiple validators for a value? Easy, we can either use a compound validator:
 
-- (void)configureValidators
-{
-  SPXEmptyDataValidator *emptyValidator = [SPXEmptyDataValidator new];
-  SPXEmailDataValidator *emailValidator = [SPXEmailValidator new];
-
-  NSOrderedSet *validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, emailValidator, nil];
-  SPXCompoundDataValidator *usernameValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
-
-  self.emailField.dataValidator = usernameValidators;
-
-  SPXPasswordDataValidator *passValidator = [SPXRegexDataValidator validatorWithExpression:regex];
-  validators = [NSOrderedSet orderedSetWithObjects:emptyValidator, passValidator, nil];
-  SPXCompoundDataValidator *passwordValidators = [SPXCompoundDataValidator validatorWithValidators:validators validationType:SPXCompoundDataValidatorValidateAll];
-
-  self.passwordField.dataValidator = passwordValidators;
-}
-
+```swift
+let nonEmpty = NonEmptyValidator()
+let email = EmailValidator()
+    
+let compound = CompoundValidator(validators: [ nonEmpty, email ])
+do {
+  try compound.validators?.validate("foor@bar.com", rule: .All)
+} catch { print(error) }
 ```
 
-## User Interface
+or we use a straight Swift array:
 
-For better reusability, try providing a factory class somewhere in your code for returning and possibly even caching them. This would reduce your view controller code to the following:
-
-``` objc
-
-self.emailField = [ValidatorFactory emailValidator];
-self.passwordField.dataValidator = [ValidatorFactory passwordValidator];
-
+```swift
+let validators = [ nonEmpty, email ]
+validators.validate("foo.bar@me.com", rule: .All)
 ```
 
-This is highly reusable and allows you to easily define all your validators in once place throughout your entire project if you want to.
+CompoundValidator are better when configuring via Interface Builder.
 
-This approach makes it much easier to use `SPXFormValidator` to validate all of your fields:
-
-``` objc
-
-- (IBAction)textFieldDidChange:(UITextField *)textField
-{
-  // update the state of the signInButton as the user types in any field
-  self.navigationItem.rightBarButtonItem.enabled = [SPXFormValidator validateFields:@[ self.emailField, self.passwordField ]];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-  // decorate the current textField based on the validator  
-  cell.accessoryView = [SPXFormValidator validateField:textField] ? nil : [self accessoryView];
-}
-
-```
-
-Download and run the example project to see individual field validation in action ;)
+_Note: You can also validate multiple views in this way_
 
 ## Installation
 
-SPXDataValidators is available through [CocoaPods](http://cocoapods.org). To install
+Warrant is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "SPXDataValidators"
-
+    pod 'Warrant'
+    
 ## Pull Requests
 
-If you have ideas for really useful, reusable validators, please create a pull request and I'll get them in ASAP. Please don't submit any validators without **tests** though... that makes GitHub'ers sad :( 
+If you have ideas for really useful, reusable validators, please create a pull request and I'll include them.
 
 When designing your validators remember these basic rules:
-
-* Its recommended you perform **a single** type of validation only per validator
-	* You can then use a compound validator for combining validators
-* Ensure your validators are stateless and immutable
-* Write unit tests!!!
 
 ## Author
 
