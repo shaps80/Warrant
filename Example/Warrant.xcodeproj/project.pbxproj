@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33B0AC309BB5B0E7AE1BA662 /* Pods_Warrant_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8CF1139407CCF6729A7C13 /* Pods_Warrant_Tests.framework */; };
+		49B56A50842D44406E25967B /* Pods_Warrant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4637204AB61711F318F5F6 /* Pods_Warrant_Example.framework */; };
 		54C9F2401C70FA10009CD9CA /* SignInCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9F23F1C70FA10009CD9CA /* SignInCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -15,7 +16,6 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		F834AC958A0DC257B77F9B27 /* Pods_Warrant_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4637204AB61711F318F5F6 /* Pods_Warrant_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,9 @@
 		0C4A052ADAE4ACF175DD336B /* Pods-Warrant_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Warrant_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Warrant_Tests/Pods-Warrant_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		39CC54A5B3582255DE1201CE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		54C9F23F1C70FA10009CD9CA /* SignInCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInCell.swift; sourceTree = "<group>"; };
+		54C9F2461C711055009CD9CA /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		54C9F2471C711C8A009CD9CA /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		54C9F24B1C7139A8009CD9CA /* ViewValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewValidators.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Warrant_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warrant_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F834AC958A0DC257B77F9B27 /* Pods_Warrant_Example.framework in Frameworks */,
+				49B56A50842D44406E25967B /* Pods_Warrant_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +85,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		54C9F2431C711044009CD9CA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				54C9F2461C711055009CD9CA /* Validator.swift */,
+				54C9F24B1C7139A8009CD9CA /* ViewValidators.swift */,
+				54C9F2471C711C8A009CD9CA /* Validators.swift */,
+			);
+			name = Classes;
+			path = ../Pod/Classes;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				54C9F2431C711044009CD9CA /* Classes */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Warrant */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -493,11 +508,13 @@
 			baseConfigurationReference = F6D30D4EA1AE624C7C504A33 /* Pods-Warrant_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Warrant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.ios.Warrant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -506,10 +523,11 @@
 			baseConfigurationReference = F9E30B3D3705C341B3CB57E7 /* Pods-Warrant_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Warrant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.ios.Warrant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

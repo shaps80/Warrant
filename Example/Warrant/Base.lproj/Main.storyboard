@@ -8,7 +8,7 @@
         <!--Sign In-->
         <scene sceneID="OO3-lQ-lOm">
             <objects>
-                <tableViewController id="MBC-ZN-keS" sceneMemberID="viewController">
+                <tableViewController id="MBC-ZN-keS" customClass="ViewController" customModule="Warrant_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zQC-ef-Jhb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,10 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="MBC-ZN-keS" id="USv-jr-Sem"/>
+                                                        <outlet property="validator" destination="cog-AQ-37R" id="Dry-JU-2rq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -53,6 +57,10 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="MBC-ZN-keS" id="CGu-8c-wPT"/>
+                                                        <outlet property="validator" destination="Wr4-C3-x01" id="3Am-1T-Hkb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -69,7 +77,7 @@
 Password rules:
 
 min:    6 characters
-max:   32 characters 
+max:   50 characters
 chars: a-z, A-Z, 0-9</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="tdc-3K-3Ju" style="IBUITableViewCellStyleDefault" id="aaW-V6-ZDo" customClass="SignInCell" customModule="Warrant_Example" customModuleProvider="target">
@@ -89,20 +97,33 @@ chars: a-z, A-Z, 0-9</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="tintColor" red="0.0" green="0.60928465480000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="dependantViews" destination="Wwh-46-L2F" collectionClass="NSMutableArray" id="zkc-sZ-qaL"/>
+                                            <outletCollection property="dependantViews" destination="oyE-ye-zph" collectionClass="NSMutableArray" id="cKx-EJ-rp5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="delegate" destination="MBC-ZN-keS" id="ngx-o1-EOu"/>
+                            <outlet property="delegate" destination="MBC-ZN-keS" id="20M-OF-sNy"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign In" id="gie-y4-UBL"/>
+                    <connections>
+                        <outlet property="emailField" destination="Wwh-46-L2F" id="tgE-ca-ZwW"/>
+                        <outlet property="passwordField" destination="oyE-ye-zph" id="m7Q-Un-WVK"/>
+                        <outlet property="signInCell" destination="aaW-V6-ZDo" id="UWj-tF-tnV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5P0-rF-t3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="cog-AQ-37R" userLabel="Email Validator" customClass="EmailValidator" customModule="Warrant"/>
+                <customObject id="Wr4-C3-x01" userLabel="Password Validator" customClass="RegexValidator" customModule="Warrant">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="regexPattern" value="^(?=.*[A-Za-z]).{6,50}$"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Invalid password"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-108.5" y="575.5"/>
         </scene>
