@@ -56,10 +56,6 @@ If you want to create a new validator, you can either comform to the `Validating
 
 If instead you want extend a UIView (or subclass) to support validation, you just need to make it conform to `ViewValidating`. Now you can use it from code or IB and gain all the benefits and power from Warrant.
 	
-* New runtime attributes (IBInspectable) for validators to make it easier assign common validations from IB
-
->These validators work exceptionally well alongside another open-source project I released [SPXControls](https://github.com/shaps80/SPXControls)
-
 ## Code
 
 If you prefer to setup your validators in code:
