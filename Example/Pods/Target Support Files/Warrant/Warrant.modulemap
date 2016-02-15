@@ -1,0 +1,6 @@
+framework module Warrant {
+  umbrella header "Warrant-umbrella.h"
+
+  export *
+  module * { export * }
+}
