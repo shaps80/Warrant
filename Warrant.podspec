@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = "Warrant"
 s.version          = "2.0"
-s.summary          = "Form and data validators done right!"
+s.summary          = "Data validation made easy. In code and from Interface Builder."
 s.homepage         = "https://github.com/shaps80/" + s.name
 s.license          = 'MIT'
 s.author           = { "Shaps Mohsenin" => "shapsuk@me.com" }
