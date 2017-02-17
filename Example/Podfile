@@ -1,12 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'Warrant_Example', :exclusive => true do
+target 'Warrant_Example' do
   pod 'Warrant', :path => '../'
 end
 
-target 'Warrant_Tests', :exclusive => true do
+target 'Warrant_Tests' do
   pod 'Warrant', :path => '../'
-
   
+  pod 'Quick'
+  pod 'Nimble'
 end

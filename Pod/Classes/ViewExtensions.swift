@@ -40,8 +40,8 @@ extension UITextField: ViewValidating {
    - throws: Throws an error if validation failed
    */
   public func validate() throws {
-    try dependantViews?.validate(.All)
-    try validator?.validate(text)
+    try dependantViews?.validate(.all)
+    try validator?.validate(text as AnyObject?)
   }
   
   /// Get/set the validator associated with this textField
@@ -66,8 +66,8 @@ extension UITextView: ViewValidating {
    - throws: Throws an error if validation failed
    */
   public func validate() throws {
-    try dependantViews?.validate(.All)
-    try validator?.validate(text)
+    try dependantViews?.validate(.all)
+    try validator?.validate(text as AnyObject?)
   }
   
   /// Get/set the validator associated with this textView
@@ -93,7 +93,7 @@ extension UITableViewCell: ViewValidating {
    */
   public func validate() throws {
     do {
-      try dependantViews?.validate(.All)
+      try dependantViews?.validate(.all)
       enabled = true
     } catch {
       enabled = false
@@ -106,8 +106,8 @@ extension UITableViewCell: ViewValidating {
    
    - parameter enabled: True if enabled, false otherwise
    */
-  public func setEnabled(enabled: Bool) {
-    selectionStyle = enabled ? .Default : .None
+  public func setEnabled(_ enabled: Bool) {
+    selectionStyle = enabled ? .default : .none
     textLabel?.alpha = enabled ? 1 : 0.3
     detailTextLabel?.alpha = enabled ? 1 : 0.3
     imageView?.alpha = enabled ? 1 : 0.3
@@ -137,10 +137,10 @@ extension UIButton: ViewValidating {
    */
   public func validate() throws {
     do {
-      try dependantViews?.validate(.All)
-      enabled = true
+      try dependantViews?.validate(.all)
+      isEnabled = true
     } catch {
-      enabled = false
+      isEnabled = false
       throw error
     }
   }

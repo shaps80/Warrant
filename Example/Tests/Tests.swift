@@ -23,36 +23,15 @@
   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import UIKit
-import XCTest
-import Warrant
+import Quick
+import Nimble
 
-extension NSError {
-  convenience init(message: String?) {
-    self.init(domain: "validation.error", code: -1, userInfo: [ NSLocalizedDescriptionKey: message ?? "Invalid value" ])
-  }
-}
+@testable import Warrant
 
-func XCTAssertThrows<T: ErrorType where T: Equatable>(error: T, block: () throws -> ()) {
-  do {
-    try block()
-  }
-  catch let e as T {
-    XCTAssertEqual(e, error)
-  }
-  catch {
-    XCTFail("Wrong error")
-  }
-}
-
-class NonEmptyValidatorTests: XCTestCase {
-  
-  func testExample() {
-    // This is an example of a functional test case.
-    XCTAssertThrows(NSError(message: "The value is empty")) { () -> () in
-      let validator = NonEmptyValidator()
-      try validator.validate("")
+final class EmptyValidator: QuickSpec {
+    
+    override func spec() {
+        
     }
-  }
-  
+    
 }

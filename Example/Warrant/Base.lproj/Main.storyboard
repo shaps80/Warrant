@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="llz-az-Asa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="llz-az-Asa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Sign In-->
@@ -12,12 +16,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zQC-ef-Jhb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Enter your login details" id="aUB-uA-Avm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="cms-qw-MuI">
-                                        <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cms-qw-MuI" id="j7E-8Q-vWf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -32,7 +36,6 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="MBC-ZN-keS" id="USv-jr-Sem"/>
-                                                        <outlet property="validator" destination="cog-AQ-37R" id="Dry-JU-2rq"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -44,7 +47,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="U6i-a2-Z7P">
-                                        <rect key="frame" x="0.0" y="157.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U6i-a2-Z7P" id="XxU-VC-B0K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -59,7 +62,7 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="MBC-ZN-keS" id="CGu-8c-wPT"/>
-                                                        <outlet property="validator" destination="Wr4-C3-x01" id="3Am-1T-Hkb"/>
+                                                        <outlet property="validator" destination="Wr4-C3-x01" id="sRb-jY-DzL"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -81,7 +84,7 @@ max:   50 characters
 chars: a-z, A-Z, 0-9</string>
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="tdc-3K-3Ju" style="IBUITableViewCellStyleDefault" id="aaW-V6-ZDo" customClass="SignInCell" customModule="Warrant_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="237.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="179.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aaW-V6-ZDo" id="Gcq-Ym-H4W">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -91,12 +94,12 @@ chars: a-z, A-Z, 0-9</string>
                                                     <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="tintColor" red="0.0" green="0.60928465480000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.60928465480000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outletCollection property="dependantViews" destination="Wwh-46-L2F" collectionClass="NSMutableArray" id="zkc-sZ-qaL"/>
                                             <outletCollection property="dependantViews" destination="oyE-ye-zph" collectionClass="NSMutableArray" id="cKx-EJ-rp5"/>
@@ -115,21 +118,24 @@ chars: a-z, A-Z, 0-9</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5P0-rF-t3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="cog-AQ-37R" userLabel="Email Validator" customClass="EmailValidator" customModule="Warrant"/>
+                <customObject id="cog-AQ-37R" userLabel="Email Validator" customClass="EmailValidator" customModule="Warrant">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="%value% is not a valid email address"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
                 <customObject id="Wr4-C3-x01" userLabel="Password Validator" customClass="RegexValidator" customModule="Warrant">
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="regexPattern" value="^(?=.*[A-Za-z]).{6,50}$"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="regexPattern" value="^[A-Za-z0-9]+.\S{5,50}$"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="errorMessage" value="Invalid password"/>
                     </userDefinedRuntimeAttributes>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-108.5" y="575.5"/>
+            <point key="canvasLocation" x="156" y="575"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WXx-Gu-QR4">
             <objects>
                 <navigationController id="llz-az-Asa" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KNq-ps-4Gs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -143,5 +149,5 @@ chars: a-z, A-Z, 0-9</string>
             <point key="canvasLocation" x="-558" y="576"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.0" green="0.60928465475062854" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.60928465475062854" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

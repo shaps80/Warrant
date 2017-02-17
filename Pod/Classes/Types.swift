@@ -56,16 +56,16 @@ extension NSError {
    
    - throws: Throws an error if validation fails
    */
-  func validate(value: AnyObject?) throws
+  func validate(_ value: AnyObject?) throws
   
 }
 
 
 /// The base validator class. All validators should subclass this. It is provided to enable IBInspector support
-public class Validator: NSObject, Validating {
+open class Validator: NSObject, Validating {
 
   /// Get/set the error message associated with this validator
-  @IBInspectable public var errorMessage: String?
+  @IBInspectable open var errorMessage: String?
   
   /**
    Validates the specified value
@@ -74,7 +74,7 @@ public class Validator: NSObject, Validating {
    
    - throws: Throws an error if validation fails
    */
-  public func validate(value: AnyObject?) throws { /* implement in subclass */ }
+  open func validate(_ value: AnyObject?) throws { /* implement in subclass */ }
   
 }
 
@@ -96,7 +96,7 @@ public class Validator: NSObject, Validating {
    
    - parameter enabled: True if validation succeeded, false otherwise
    */
-  optional func setEnabled(enabled: Bool)
+  @objc optional func setEnabled(_ enabled: Bool)
   
   /// Get/ste the views that must pass validation in order for this view to validate
   var dependantViews: [ViewValidating]? { get set }
@@ -123,12 +123,12 @@ extension ViewValidating {
    - throws: Throws an error if validation fails
    */
   public func validate() throws {
-    try dependantViews?.validate(.All)
+    try dependantViews?.validate(.all)
   }
   
 }
 
-extension SequenceType where Generator.Element : ViewValidating {
+extension Sequence where Iterator.Element : ViewValidating {
   
   /**
    Validates all view validators in this sequence
@@ -137,7 +137,7 @@ extension SequenceType where Generator.Element : ViewValidating {
    
    - throws: Throws an error if validation fails
    */
-  public func validate(rule: ValidationRule) throws {
+  public func validate(_ rule: ValidationRule) throws {
     var isValid = false
     var message: String?
     
@@ -148,7 +148,7 @@ extension SequenceType where Generator.Element : ViewValidating {
         try view.validate()
         isValid = true
       } catch {
-        if rule == .All {
+        if rule == .all {
           throw NSError(message: message)
         }
       }
@@ -161,7 +161,7 @@ extension SequenceType where Generator.Element : ViewValidating {
   
 }
 
-extension SequenceType where Generator.Element : Validating {
+extension Sequence where Iterator.Element : Validating {
   
   /**
    Validates all validators in this sequence
@@ -171,12 +171,12 @@ extension SequenceType where Generator.Element : Validating {
    
    - throws: Throws an error if validation fails
    */  
-  public func validate(value: AnyObject?, rule: ValidationRule) throws {
+  public func validate(_ value: AnyObject?, rule: ValidationRule) throws {
     for validator in self {
       do {
         try validator.validate(value)
       } catch {
-        if rule == .All {
+        if rule == .all {
           throw NSError(message: validator.errorMessage)
         }
       }

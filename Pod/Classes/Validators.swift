@@ -45,12 +45,12 @@ public final class NonEmptyValidator: Validator {
    
    - throws: Throws an error if validation fails
    */
-  override public func validate(value: AnyObject?) throws {
+  override public func validate(_ value: AnyObject?) throws {
     if let value = value {
       
       // Validate objects that have an isEmpty var
-      if value.respondsToSelector("isEmpty") {
-        if let isValid = value.valueForKey("isEmpty") as? Bool {
+      if value.responds(to: #selector(getter: UIBezierPath.isEmpty)) {
+        if let isValid = value.value(forKey: "isEmpty") as? Bool {
           if !isValid {
             throw NSError(message: errorMessage)
           }
@@ -58,8 +58,8 @@ public final class NonEmptyValidator: Validator {
       }
       
       // Validate objects that have a length var
-      if value.respondsToSelector("length") {
-        if let length = value.valueForKey("length") as? Int {
+      if value.responds(to: #selector(getter: UILayoutSupport.length)) {
+        if let length = value.value(forKey: "length") as? Int {
           if length == 0 {
             throw NSError(message: errorMessage)
           }
@@ -67,8 +67,8 @@ public final class NonEmptyValidator: Validator {
       }
       
       // Validate objects that have a count var
-      if value.respondsToSelector("count") {
-        if let count = value.valueForKey("count") as? Int {
+      if value.responds(to: #selector(getter: CIVector.count)) {
+        if let count = value.value(forKey: "count") as? Int {
           if count == 0 {
             throw NSError(message: errorMessage)
           }
@@ -82,10 +82,10 @@ public final class NonEmptyValidator: Validator {
 }
 
 /// A validator that fails if the specified regex pattern cannot find a match on the specified value.
-public class RegexValidator: Validator {
+open class RegexValidator: Validator {
   
   /// The regex pattern to match
-  @IBInspectable public var regexPattern: String?
+  @IBInspectable open var regexPattern: String?
   
   override init() { }
   
@@ -101,12 +101,12 @@ public class RegexValidator: Validator {
    
    - throws: Throws an error if validation fails
    */
-  override public func validate(value: AnyObject?) throws {
+  override open func validate(_ value: AnyObject?) throws {
     if let pattern = regexPattern,
-      value = value as? String {
-        let regex = try NSRegularExpression(pattern: pattern, options: .CaseInsensitive)
-        let range = NSMakeRange(0, value.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
-        let matches = regex.matchesInString(value, options: [], range: range)
+      let value = value as? String {
+        let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+        let range = NSMakeRange(0, value.lengthOfBytes(using: String.Encoding.utf8))
+        let matches = regex.matches(in: value, options: [], range: range)
         
         if matches.count == 0 {
           throw NSError(message: errorMessage)
@@ -148,8 +148,8 @@ public final class EmailValidator: RegexValidator {
  - Any: Any validator can pass in order for validation to succeed
  */
 public enum ValidationRule: Int {
-  case All
-  case Any
+  case all
+  case any
 }
 
 /// A validator for validating multiple validators based on a validation rule
@@ -159,7 +159,7 @@ public final class CompoundValidator: Validator {
   @IBOutlet public var validators: [Validator]?
   
   /// The validation rule to apply for validating this validator
-  public var rule: ValidationRule = .All
+  public var rule: ValidationRule = .all
   
   /**
    Initializes this validator with the specified validators
@@ -179,7 +179,7 @@ public final class CompoundValidator: Validator {
    
    - throws: Throws an error if validation fails
    */
-  override public func validate(value: AnyObject?) throws {
+  override public func validate(_ value: AnyObject?) throws {
     if let validators = validators {
       try validators.validate(value, rule: rule)
       return
@@ -203,7 +203,7 @@ public final class BlockValidator: Validator {
    
    - returns: A newly configured validator
    */
-  public convenience init(block: AnyObject? throws -> Void) {
+  public convenience init(block: @escaping (AnyObject?) throws -> Void) {
     self.init()
     validationBlock = block
   }
@@ -215,7 +215,7 @@ public final class BlockValidator: Validator {
    
    - throws: Throws an error if validation fails
    */
-  override public func validate(value: AnyObject?) throws {
+  override public func validate(_ value: AnyObject?) throws {
     try validationBlock?(value)
   }
   

@@ -1,14 +1,22 @@
 PODS:
+  - Nimble (6.0.1)
+  - Quick (1.1.0)
   - Warrant (2.0)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - Warrant (from `../`)
 
 EXTERNAL SOURCES:
   Warrant:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Warrant: 5026e34fb3f2fa54672389e0e62a9589609f06b4
+  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+  Warrant: b8b26ebf06a8eb030c35a7e50a00aa797a45c64e
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 3f9405c4494fbff1db10649e3d29393b502e328a
+
+COCOAPODS: 1.2.0
