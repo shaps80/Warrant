@@ -3,9 +3,5 @@
   "xcode_workspace": "Example/Warrant.xcworkspace",
   "xcode_scheme": "Warrant-Example",
   "osx_image": "xcode8.2",
-  "before_install": [
-    "gem install cocoapods",
-    "pod install"
-  ],
   "os": "ios"
 }
