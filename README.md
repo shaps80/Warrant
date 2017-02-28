@@ -2,7 +2,7 @@
 
 # Warrant
 
-[![CI Status](http://img.shields.io/travis/shaps80/Warrant.svg?style=flat)](https://travis-ci.org/shaps80/Warrant)
+[![CI Status](http://img.shields.io/travis/shaps80/Warrant.svg?style=flat)](https://travis-ci.org/shaps80/Warrant.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrant)
 [![License](https://img.shields.io/cocoapods/l/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrany)
 [![Platform](https://img.shields.io/cocoapods/p/Warrant.svg?style=flat)](http://cocoadocs.org/docsets/Warrant)
