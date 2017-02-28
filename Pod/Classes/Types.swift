@@ -49,7 +49,7 @@ extension NSError {
   /// Get/set the error message to use when this validator fails
   var errorMessage: String? { get set }
   
-  /**
+    /**
    Validates the specified value.
    
    - parameter value: The value to validate
